@@ -1,4 +1,4 @@
-#include "level.h"
+ï»¿#include "level.h"
 
 char getTailleNiveau(FILE* niveaux, int* largeur, int* hauteur) {
 
@@ -22,7 +22,7 @@ char** readLevel(char* path, int numero) {
 		return NULL;
 	}
 	
-	/* Initialisation du tableau 2D de caractères */
+	/* Initialisation du tableau 2D de caracteres */
 	char** niveau = (char**)calloc(h, sizeof(char*));
 	if(niveau == NULL) {
 		fprintf(stderr, "Probleme d'allocation memoire du niveau.\n");
