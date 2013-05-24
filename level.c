@@ -67,8 +67,8 @@ char** readLevel(char* path, int numero) {
 			break;
 		}
 		
-		/* ";LEVEL x" existe pas sur cette ligne, mais la copie est autorisee */
-		/* si le premier caractere est un ;, nous sommes dans un champ AUTHOR ou COMMENT, il faut passer a la ligne suivante */
+		/* ";LEVEL x" n'existe pas sur cette ligne, mais la copie est autorisee */
+		/* si le premier caractere est un ';', nous sommes dans un champ AUTHOR ou COMMENT, il faut passer a la ligne suivante */
 		if (buff[0] == ';') {
 			j++;
 			continue;
@@ -88,7 +88,7 @@ char** readLevel(char* path, int numero) {
 					niveau[j][k] = buff[k];
 					break;
 				default:	/* caractere autre */
-					/* on liberera ici les lignes deja completees ainsi que niveau de la memoire */
+					/* on liberera ici les lignes deja completees ainsi que le niveau de la memoire */
 					fprintf(stderr, "Caractere inconnu.\n");
 					return NULL;
 			}
