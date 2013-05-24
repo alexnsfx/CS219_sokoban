@@ -1,4 +1,4 @@
-cs219_sokoban
+CS219_sokoban
 =============
 
 Mini projet de CS219 - Sokoban
