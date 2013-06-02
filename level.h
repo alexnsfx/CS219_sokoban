@@ -1,7 +1,4 @@
-﻿#ifndef LEVEL_H
-#define LEVEL_H
-
-/**
+﻿/**
  * \file level.h
  * \brief (Prototypes) Fonctions utiles a la lecture d'un niveau
  * \author Dorialex
@@ -10,6 +7,9 @@
  *
  * Prototypes des fonctions du fichier level.c, regroupant toutes les fonctions utiles a la lecture d'un niveau.
  */
+
+#ifndef LEVEL_H
+#define LEVEL_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -26,6 +26,5 @@
 char getTailleNiveau(FILE* niveaux, int* largeur, int* hauteur);
 
 char** readLevel(char* path, int numero);
-
 
 #endif
