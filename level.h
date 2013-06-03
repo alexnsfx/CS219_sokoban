@@ -13,6 +13,15 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "sokoban.h"
+
+typedef enum {
+	NoError,
+	FichierIntrouvable,
+	ErreurDimensions,
+	AllocationMemoire,
+	CaractereInconnu
+} LevelError;
 
 /**
  * \fn char getTailleNiveau(FILE* niveaux, int* largeur, int* hauteur)
@@ -23,8 +32,14 @@
  * \param hauteur Pointeur sur l'entier qui contiendra la hauteur du niveau
  * \return Renvoie un code d'erreur, 0 si tout s'est bien passe
  */
-char getTailleNiveau(FILE* niveaux, int* largeur, int* hauteur);
+LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur);
 
-char** readLevel(char* path, int numero);
+LevelError alloueNiveau(Niveau* n);
+LevelError freeNiveau(Niveau* n);
+LevelError remplirNiveau(Niveau* n);
+LevelError caractereValide(char* ligne);
+
+
+LevelError readLevel(char* path, NIVEAU* n, int numero);
 
 #endif
