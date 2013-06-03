@@ -7,16 +7,14 @@
 #define LARGEUR_FENETRE TAILLE_BLOC*LARGEUR
 #define HAUTEUR_FENETRE TAILLE_BLOC*HAUTEUR
 
-typedef enum {
-	Joueur = '@',
-	Mur = '#',
-	Cible = '.',
-	Caisse = '$',
-	Sol = ' ',
-	CaisseCible = '*',
-	JoueurCible = '+'
-} MapObject;
+#define	JOUEUR '@'
+#define	MUR '#'
+#define	CIBLE '.'
+#define	CAISSE '$'
+#define	SOL ' '
+#define	CAISSE_CIBLE '*'
+#define	JOUEUR_CIBLE '+'
 
-typedef char** NIVEAU;
+typedef char** Niveau;
 
 #endif
