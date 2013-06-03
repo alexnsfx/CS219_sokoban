@@ -24,13 +24,14 @@ typedef enum {
 } LevelError;
 
 /**
- * \fn char getTailleNiveau(FILE* niveaux, int* largeur, int* hauteur)
+ * \fn LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur)
  * \brief Donne la largeur et la hauteur du niveau desire
  *
  * \param niveaux Pointeur sur le fichier de niveaux
+ * \param numero Numero du niveau dont on doit determiner les dimensions
  * \param largeur Pointeur sur l'entier qui contiendra la largeur du niveau
  * \param hauteur Pointeur sur l'entier qui contiendra la hauteur du niveau
- * \return Renvoie un code d'erreur, 0 si tout s'est bien passe
+ * \return Renvoie un code d'erreur, NoError si tout s'est bien passe
  */
 LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur);
 

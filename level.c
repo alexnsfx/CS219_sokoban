@@ -1,8 +1,41 @@
 ﻿#include "level.h"
 
 LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur) {
+	int level_courant = 0;
+	char chaine[NB_BLOCS_LARGEUR+1]= {};
+	char copierAutorise = 0;
+	
+	*largeur = 0;
+	*hauteur = 0;
 
-	return 0;
+	while (fgets(chaine, NB_BLOCS_LARGEUR+1, niveaux) != NULL) { 
+		/* si on ne trouve pas ";LEVEL x" sur la ligne, on passe a la ligne suivante */
+		if (sscanf(chaine, ";LEVEL %d", &level_courant) <= 0) {
+			continue;
+		}
+
+		if (level_courant == numero && copierAutorise == 0) {
+			/* ";LEVEL x" existe, si x est le numero du level voulu, on autorise la copie pour les prochaines lignes */
+			copierAutorise = 1;
+			continue;
+		}
+		else if(level_courant != numero && copierAutorise == 1) {
+			/* ";LEVEL x" existe, mais x n'est pas le numero du level voulu */
+			/* on a donc fini de lire le niveau, on sort du while */
+			copierAutorise = 0;
+			break;
+		}
+		
+		/* ";LEVEL x" n'existe pas sur cette ligne, mais la copie est autorisee */
+		/* si le premier caractere est un ';', nous sommes dans un champ AUTHOR ou COMMENT, il faut passer a la ligne suivante */
+		if (buff[0] == ';') {
+			continue;
+		}
+		
+		(*hauteur)++;
+	}
+
+	return NoError;
 }
 
 LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur) {
