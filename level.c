@@ -1,7 +1,7 @@
 ﻿#include "level.h"
 
 /**
- * \fn LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur)
+ * \fn LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau)
  * \brief Donne la largeur et la hauteur du niveau desire
  *
  * \param niveaux Pointeur sur le fichier de niveaux
@@ -12,14 +12,15 @@
  */
 LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau) {
 	int level_courant = 0;
-	char chaine[NB_BLOCS_LARGEUR+1]= {0};
+	char chaine[NB_BLOCS_LARGEUR+2]= {0};	/* +2 pour '\n' et '\0' */
 	char copierAutorise = 0;
 	int i = 0;
 
 	*largeur = 0;
 	*hauteur = 0;
 
-	while (fgets(chaine, NB_BLOCS_LARGEUR+1, niveaux) != NULL) { 
+	while (fgets(chaine, NB_BLOCS_LARGEUR+2, niveaux) != NULL) { 	/* +2 pour '\n' et '\0' */
+	
 		/* si on ne trouve pas ";LEVEL x" sur la ligne, on passe a la ligne suivante */
 		if (sscanf(chaine, ";LEVEL %d", &level_courant) <= 0 && copierAutorise == 0) {
 			continue;
@@ -39,7 +40,7 @@ LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur
 		
 		/* ";LEVEL x" n'existe pas sur cette ligne, mais la copie est autorisee */
 		/* si le premier caractere est un ';', nous sommes dans un champ AUTHOR ou COMMENT, il faut passer a la ligne suivante */
-		if (chaine[0] == ';') {
+		if (chaine[0] == ';') { 
 			fgetpos(niveaux, positionNiveau);
 			continue;
 		}
@@ -48,13 +49,11 @@ LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur
 		while(chaine[i] != '\n' && chaine[i] != '\0') {
 			i++;
 		}
-		i++;
 
 		*largeur = (i > *largeur) ? i : *largeur;
 		
 		(*hauteur)++;
 	}
-	(*hauteur)++;
 
 	return NoError;
 }
@@ -84,20 +83,20 @@ LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur) {
 	return NoError;
 }
 
-LevelError freeNiveau(Niveau* n) {
-	return NoError;
+void freeNiveau(Niveau* n) {
+	
 }
 
 LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h) {
 	LevelError code_e = NoError;
 	int j = 0;
-	char* buff = (char*)calloc(w, sizeof(char));
+	char* buff = (char*)calloc(w+2, sizeof(char));		/* +2 pour '\n' et '\0' */
 	
 	fsetpos(levels, position);
-	while (j<h && fgets(buff, w+1, levels) != NULL) { 	/* +1 pour '\n' */
+	while (j<h && fgets(buff, w+2, levels) != NULL) { 	/* +2 pour '\n' et '\0' */
 		code_e = caractereValide(n, buff, j, w);
 		if(code_e != NoError) {
-			fprintf(stderr, "Caractere invalide present.\n");
+			fprintf(stderr, "Caractere invalide present a la ligne %d du niveau.\n", j+1);
 			return CaractereInconnu;
 		}
 		j++;
@@ -113,18 +112,24 @@ LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int lar
 	for(k = 0; k < largeur; k++) {
 		switch (ligne[k]) {
 			case JOUEUR:		/* joueur */
-			case MUR:		/* mur */
-			case CIBLE:		/* cible */
+			case MUR:			/* mur */
+			case CIBLE:			/* cible */
 			case CAISSE:		/* caisse */
-			case SOL:		/* sol */
+			case SOL:			/* sol */
 			case CAISSE_CIBLE:	/* caisse sur cible */
 			case JOUEUR_CIBLE:	/* joueur sur cible */
-				(*niveau)[numeroLigne][k] = ligne[k];
+				(*niveau)[numeroLigne][k] = ligne[k];	/* on copie le caractere dans le niveau */
+				break;
+			case '\n':	/* fin d'une ligne de largeur inferieure a largeur */
 				break;
 			default:	/* caractere autre */
-				break;
+				fprintf(stderr, "Le caractere '%c' est inconnu.\n", ligne[k]);
+				freeNiveau(niveau);
+				return CaractereInconnu;
 		}
+
 		if(ligne[k] == '\n') {
+			/* fin d'une ligne de largeur inferieure a largeur, on passe a la ligne suivante */
 			break;
 		}
 	}

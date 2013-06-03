@@ -1,10 +1,10 @@
-struct Coup
+typedef struct
 {
-	Direction direction
-	int posDepartAbscisse
-	int posDepartOrdonnee
-	char caisseDeplacee /* 1 si caisse a deplacer*/
-};
+	Direction direction;
+	int posDepartAbscisse;
+	int posDepartOrdonnee;
+	char caisseDeplacee; /* 1 si caisse a deplacer, 0 sinon */
+} Coup;
 
 typedef enum
 {

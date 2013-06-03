@@ -12,26 +12,28 @@ void deplacerObjet(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee, int l
 	int abscisse = (*mouvement).posDepartAbscisse;
 
 	switch (Direction) {
-				case HAUT:	ordonnee--;
-						break;
-				case BAS:	ordonnee++;	
+		case HAUT:	ordonnee--;
+					break;
+		case BAS:	ordonnee++;	
+					break;	
+		case GAUCHE:	abscisse--;	
 						break;	
-				case GAUCHE:	abscisse--;	
+		case DROITE:	abscisse++;
 						break;	
-				case DROITE:	abscisse++;
-						break;	
-				default:	return 2;	/*  erreur */
+		default:	return 2;	/*  erreur */
+	}
+	
 	if (caisseDeplacee == 1 && liberte == 0) {	/* si on doit deplacer la caisse */
 		*nbPoussee++;								/* re-execution de la fonction */
-	deplacerObjet(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee, 1);	/* avec la caisse en objet */
+		deplacerObjet(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee, 1);	/* avec la caisse en objet */
 	}
-		majNiveau((*mouvement).posDepartOrdonnee,(*mouvement).posDepartAbscisse, ordonnee, abscisse, n);
-		}
+	
+	majNiveau((*mouvement).posDepartOrdonnee,(*mouvement).posDepartAbscisse, ordonnee, abscisse, n);
 	*nbMvt++;
+	
 	if (caisseDeplacee == 1) {
 		*nbPoussee++;
 	}
-	
 }
 
 /**
