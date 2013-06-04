@@ -1,6 +1,9 @@
 #ifndef SOKOBAN_H
 #define SOKOBAN_H
 
+#define NOM_JEU "Pokeban"
+#define BUFFER_WIDTH 64
+
 #define COLOR_BIT 32
 #define TAILLE_BLOC 32
 #define NB_BLOCS_LARGEUR 30

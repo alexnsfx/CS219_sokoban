@@ -1,24 +1,22 @@
 #include "mouvement.h"
 
-/* 0:ok, 1:erreurAlloc, 2:pile* nul */
-char empilerCoup(CoupsJoues* pile, Direction direction, int posDepartOrdonnee, int posDepartAbscisse, char caisseDeplacee) {
+PileError empilerCoup(CoupsJoues* pile, Direction direction, Position posDepart, char caisseDeplacee) {
 	if(pile == NULL) {
-		return 2;
+		return UndefinedPile;
 	}
 	
 	Coup* nouveauCoup = (Coup*)malloc(sizeof(Coup));
 	if(nouveauCoup == NULL) {
-		return 1;
+		return AllocError;
 	}
 	
 	nouveauCoup->direction = direction;
-	nouveauCoup->posDepartOrdonnee = posDepartOrdonnee;
-	nouveauCoup->posDepartAbscisse = posDepartAbscisse;
+	nouveauCoup->posDepart = posDepart;
 	nouveauCoup->caisseDeplacee = caisseDeplacee;
 	nouveauCoup->next = *pile;
 	*pile = nouveauCoup;
 	
-	return 0;
+	return Ok;
 }
 
 Coup* depilerCoup(CoupsJoues* pile) {
@@ -45,52 +43,6 @@ void libererPile(CoupsJoues* pile) {
 }
 
 
-
-/**
- * \fn void calculPositionPositif (int* ordonnee, int* abscisse, Coup* mouvement)
- * \brief Deplace un objet dans la direction souhaitee
- *
- * \param ordonne Ordonnee d'origine
- * \param abscisse Abscisse d'origine 
- * \param mouvement  Mouvement demande
- */
-
-void calculPositionPositif (int* ordonnee, int* abscisse, Direction direction) {
-	switch (direction) {
-				case HAUT:	(*ordonnee)--;
-						break;
-				case BAS:	(*ordonnee)++;	
-						break;	
-				case GAUCHE:	(*abscisse)--;	
-						break;	
-				case DROITE:	(*abscisse)++;
-						break;	
-				default:	break;	/* erreur */
-	}	
-}
-/**
- * \fn void calculPositionNegatif (int* ordonnee, int* abscisse, Coup* mouvement)
- * \brief Deplace un objet dans la direction souhaitee
- *
- * \param ordonne Ordonnee d'origine
- * \param abscisse Abscisse d'origine 
- * \param mouvement  Mouvement demande
- */
-
-void calculPositionNegatif (int* ordonnee, int* abscisse, Direction direction) {
-	switch (direction) {
-				case HAUT:	ordonnee++;
-						break;
-				case BAS:	ordonnee--;	
-						break;	
-				case GAUCHE:	abscisse++;	
-						break;	
-				case DROITE:	abscisse--;
-						break;	
-				default:	break;	/* erreur */
-	}
-}
-
 /**
  * \fn void deplacerObjet(Niveau* n, Coup* mouvement , int* nbMvt, int* nbPoussee)
  * \brief Deplace un objet dans la direction souhaitee
@@ -101,25 +53,20 @@ void calculPositionNegatif (int* ordonnee, int* abscisse, Direction direction) {
  * \param nbPoussee Compteur de poussees de caisses
  */
 void deplacerObjet(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee) {
-	int ordonneeCaisseFin, ordonnee;
-	int abscisseCaisseFin, abscisse;
+	Position position, positionCaisseFin;
+	position = (*mouvement).posDepart;
+	positionCaisseFin = (*mouvement).posDepart;
 
-	ordonneeCaisseFin = (*mouvement).posDepartOrdonnee;
-	ordonnee = (*mouvement).posDepartOrdonnee;
-
-	abscisseCaisseFin = (*mouvement).posDepartAbscisse;
-	abscisse = (*mouvement).posDepartAbscisse;
-
-	calculPositionPositif (&ordonnee, &abscisse, (*mouvement).direction);
+	calculPosition(&position, (*mouvement).direction, Positif);
 
 	if ((*mouvement).caisseDeplacee == 1 ) {	
-		calculPositionPositif (&ordonneeCaisseFin, &abscisseCaisseFin, (*mouvement).direction);
-		calculPositionPositif (&ordonneeCaisseFin, &abscisseCaisseFin, (*mouvement).direction);
-		majNiveau(ordonnee, abscisse, ordonneeCaisseFin, abscisseCaisseFin, n);
+		calculPosition(&positionCaisseFin, (*mouvement).direction, Positif);
+		calculPosition(&positionCaisseFin, (*mouvement).direction, Positif);
+		majNiveau(position, positionCaisseFin, n);
 		(*nbPoussee)++;
 	}
 
-	majNiveau((*mouvement).posDepartOrdonnee,(*mouvement).posDepartAbscisse, ordonnee, abscisse, n);
+	majNiveau((*mouvement).posDepart, position, n);
 	(*nbMvt)++;
 }
 
@@ -133,17 +80,16 @@ void deplacerObjet(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee) {
  * \param nbPoussee Compteur de poussees de caisses
  */
 void deplacerObjetRetour(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee) {
-	int ordonnee = (*mouvement).posDepartOrdonnee;
-	int abscisse = (*mouvement).posDepartAbscisse;
+	Position position = (*mouvement).posDepart;
 
-	calculPositionNegatif (&ordonnee, &abscisse, (*mouvement).direction);
-	majNiveau((*mouvement).posDepartOrdonnee,(*mouvement).posDepartAbscisse, ordonnee, abscisse, n);
+	calculPosition(&position, (*mouvement).direction, Negatif);
+	majNiveau((*mouvement).posDepart, position, n);
 	(*nbMvt)--;
 
 	if ((*mouvement).caisseDeplacee == 1) {		
-		calculPositionPositif (&ordonnee, &abscisse, (*mouvement).direction);
-		calculPositionPositif (&ordonnee, &abscisse, (*mouvement).direction);
-		majNiveau(ordonnee, abscisse, (*mouvement).posDepartOrdonnee, (*mouvement).posDepartAbscisse, n);
+		calculPosition(&position, (*mouvement).direction, Negatif);
+		calculPosition(&position, (*mouvement).direction, Negatif);
+		majNiveau(position, (*mouvement).posDepart, n);
 		(*nbPoussee)--;
 	}
 }
@@ -158,48 +104,48 @@ void deplacerObjetRetour(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee)
  * \param abscisse Abscisse de l'objet apres deplacement
  * \param n Pointeur sur le fichier de niveaux
  */
-void majNiveau(int ordonneeInit, int abscisseInit, int ordonnee, int abscisse, Niveau* n) {
-	switch ((*n)[ordonnee][abscisse]) {
-				case CIBLE:	switch ((*n)[ordonneeInit][abscisseInit]) {
+void majNiveau(Position positionDepart, Position position, Niveau* n) {
+	switch ((*n)[position.y][position.x]) {
+				case CIBLE:	switch ((*n)[positionDepart.y][positionDepart.x]) {
 								case JOUEUR:
-									(*n)[ordonneeInit][abscisseInit] = SOL;
-									(*n)[ordonnee][abscisse] = JOUEUR_CIBLE;
+									(*n)[positionDepart.y][positionDepart.x] = SOL;
+									(*n)[position.y][position.x] = JOUEUR_CIBLE;
 									break;
 								case CAISSE:
-									(*n)[ordonneeInit][abscisseInit] = SOL;
-									(*n)[ordonnee][abscisse] = CAISSE_CIBLE;	
+									(*n)[positionDepart.y][positionDepart.x] = SOL;
+									(*n)[position.y][position.x] = CAISSE_CIBLE;	
 									break;	
 								case CAISSE_CIBLE:
-									(*n)[ordonneeInit][abscisseInit] = CIBLE;
-									(*n)[ordonnee][abscisse] = CAISSE_CIBLE;		
+									(*n)[positionDepart.y][positionDepart.x] = CIBLE;
+									(*n)[position.y][position.x] = CAISSE_CIBLE;		
 									break;	
 								case JOUEUR_CIBLE:	
-									(*n)[ordonneeInit][abscisseInit] = CIBLE;
-									(*n)[ordonnee][abscisse] = JOUEUR_CIBLE;	
+									(*n)[positionDepart.y][positionDepart.x] = CIBLE;
+									(*n)[position.y][position.x] = JOUEUR_CIBLE;	
 									break;	
-								default:	break;	
+								default:	break;	/* erreur, l'objet en position de depart n'est pas censé se deplacer */
 							}
-				case SOL:	switch ((*n)[ordonneeInit][abscisseInit]) {
+				case SOL:	switch ((*n)[positionDepart.y][positionDepart.x]) {
 								case JOUEUR:	
-									(*n)[ordonneeInit][abscisseInit] = SOL;
-									(*n)[ordonnee][abscisse] = JOUEUR;	
+									(*n)[positionDepart.y][positionDepart.x] = SOL;
+									(*n)[position.y][position.x] = JOUEUR;	
 									break;
 								case CAISSE:		
-									(*n)[ordonneeInit][abscisseInit] = SOL;
-									(*n)[ordonnee][abscisse] = CAISSE;	
+									(*n)[positionDepart.y][positionDepart.x] = SOL;
+									(*n)[position.y][position.x] = CAISSE;	
 									break;	
 								case CAISSE_CIBLE:		
-									(*n)[ordonneeInit][abscisseInit] = CIBLE;
-									(*n)[ordonnee][abscisse] = CAISSE;	
+									(*n)[positionDepart.y][positionDepart.x] = CIBLE;
+									(*n)[position.y][position.x] = CAISSE;	
 									break;	
 								case JOUEUR_CIBLE:
-									(*n)[ordonneeInit][abscisseInit] = CIBLE;
-									(*n)[ordonnee][abscisse] = JOUEUR;		
+									(*n)[positionDepart.y][positionDepart.x] = CIBLE;
+									(*n)[position.y][position.x] = JOUEUR;		
 									break;	
-								default:	break;	/*  erreur */
+								default:	break;	/* erreur, l'objet en position de depart n'est pas censé se deplacer */
 							}
-				default :	break; 	/* erreur */
-				}
+				default :	break; 	/* erreur, on ne peut pas marcher sur la case d'arrivee */
+	}
 }
 
 	
@@ -226,30 +172,19 @@ void annulerCoup(Niveau* n, CoupsJoues* pile, int* nbMvt, int* nbPoussee) {
  * \param direction Donne la direction du deplacement
  * \return Renvoie un code d'erreur, 0 si le deplacement est possible
  */
-TypeDeplacement deplacementPossible(Niveau* n, int ordonnee, int abscisse, int liberte, Direction direction) {
-	int ordo = ordonnee;
-	int absc = abscisse;
-	switch (direction) {
-				case HAUT:	ordo--;
-						break;	
-				case BAS:	ordo++;	
-						break;	
-				case GAUCHE:	absc--;	
-						break;	
-				case DROITE:	absc++;
-						break;	
-				default:	return Impossible;	/* direction inconnue */
-	}
+TypeDeplacement deplacementPossible(Niveau* n, Position position, int liberte, Direction direction) {
+	Position pos = position;
+	calculPosition(&pos, direction, Positif);
 
-	switch ((*n)[ordo][absc]) {
+	switch ((*n)[pos.y][pos.x]) {
 				case MUR:
 				case JOUEUR:
 				case JOUEUR_CIBLE:
-					return 1; /* l'objet ne peut pas se deplacer*/
+					return Impossible; /* la case est occupee, l'objet ne peut pas se deplacer */
 				case CAISSE:	
 				case CAISSE_CIBLE:	
 					if(liberte == 0) {	/* on re-appelle la fonction pour voir si la caisse rencontree peut se deplacer */
-						if(deplacementPossible(n, ordo, absc, 1, direction) < Impossible) {
+						if(deplacementPossible(n, pos, 1, direction) < Impossible) {
 							return PossibleAvecCaisse;
 						}
 						else {
@@ -259,6 +194,29 @@ TypeDeplacement deplacementPossible(Niveau* n, int ordonnee, int abscisse, int l
 					else {	/* test du deplacement de la caisse */
 						return Impossible;	/* si elle ne peut pas se deplacer */
 					}
-				default:	return Possible;	/* caractere autre (sol, cible), deplacement sans caisse */
+				default:
+					return Possible;	/* caractere autre (sol, cible), deplacement sans caisse */
 	}
+}
+
+/**
+ * \fn void calculPositionPositif (int* ordonnee, int* abscisse, Coup* mouvement)
+ * \brief Deplace un objet dans la direction souhaitee
+ *
+ * \param ordonne Ordonnee d'origine
+ * \param abscisse Abscisse d'origine 
+ * \param mouvement  Mouvement demande
+ */
+void calculPosition(Position* position, Direction direction, SensDeplacement sens) {
+	switch (direction) {
+				case HAUT:	(position->y) -= sens;
+						break;
+				case BAS:	(position->y) += sens;
+						break;	
+				case GAUCHE:	(position->x) -= sens;
+						break;	
+				case DROITE:	(position->x) += sens;
+						break;	
+				default:	break;	/* erreur, direction invalide */
+	}	
 }

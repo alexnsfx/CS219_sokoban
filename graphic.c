@@ -1,19 +1,19 @@
 #include "graphic.h"
 
-char initSDL(SDL_Surface** ecran) {
+SDLInitError initSDL(SDL_Surface** ecran) {
 	if(SDL_Init(SDL_INIT_VIDEO) != 0) {
 		fprintf(stderr, "Erreur d'initialisation de la SDL ! %s\n", SDL_GetError());
-		return 1;
+		return Error;
 	}
-	SDL_WM_SetCaption("Pokeban", NULL);
+	SDL_WM_SetCaption(NOM_JEU, NULL);
 	*ecran = SDL_SetVideoMode(LARGEUR_FENETRE, HAUTEUR_FENETRE, COLOR_BIT, SDL_HWSURFACE);
 	if(*ecran == NULL) {
 		fprintf(stderr, "Impossible de charger le mode video ! %s\n", SDL_GetError());
-		return 1;
+		return Error;
 	}
 	
 	SDL_FillRect(*ecran, NULL, SDL_MapRGB((*ecran)->format, 0, 0, 0));
-	return 0;
+	return Ok;
 }
 
 void freeSDL(SDL_Surface*** sprites) {
@@ -44,7 +44,7 @@ void loadSprites(SDL_Surface*** sprites) {
 }
 
 void libereSprites(SDL_Surface*** sprites) {
-	int i = 0;	
+	int i;	
 	for(i = 0; i < NB_SPRITE; i++) {
 		SDL_FreeSurface((*sprites)[i]);
 	}
@@ -68,7 +68,7 @@ void effacerNiveau(SDL_Surface* fond) {
 	SDL_FillRect(fond, NULL, SDL_MapRGB(fond->format, 0, 0, 0));
 }
 
-Sprites choixSprite(char objet) {
+SpriteType choixSprite(char objet) {
 	switch(objet) {
 		case JOUEUR:
 			return S_BAS;
@@ -89,54 +89,12 @@ Sprites choixSprite(char objet) {
 	}
 }
 
-char clavierHandler(SDL_Event* event, Niveau* n, Position* posJoueur, CoupsJoues* pile, int* nbMvt, int* nbPoussee) {
+void keyDownHandler(Direction dir, Niveau* n, Position* posJoueur, CoupsJoues* pile, int* nbMvt, int* nbPoussee) {
 	TypeDeplacement deplacementCaisse = Impossible;
-	switch((*event).type)
-	{
-		case SDL_QUIT:
-			return 1;
-		case SDL_KEYDOWN:
-			switch ((*event).key.keysym.sym)
-			{	
-				case SDLK_ESCAPE:
-					return 1;
-				case SDLK_UP:
-					deplacementCaisse = deplacementPossible(n, (*posJoueur).y, (*posJoueur).x, 0, HAUT);
-					if(deplacementCaisse < Impossible) {
-						empilerCoup(pile, HAUT, (*posJoueur).y, (*posJoueur).x, deplacementCaisse);
-						deplacerObjet(n, *pile, nbMvt, nbPoussee);
-						calculPositionPositif(&((*posJoueur).y), &((*posJoueur).x), HAUT);
-					}
-					break;
-				case SDLK_DOWN:
-					deplacementCaisse = deplacementPossible(n, (*posJoueur).y, (*posJoueur).x, 0, BAS);
-					if(deplacementCaisse < Impossible) {
-						empilerCoup(pile, BAS, (*posJoueur).y, (*posJoueur).x, deplacementCaisse);
-						deplacerObjet(n, *pile, nbMvt, nbPoussee);
-						calculPositionPositif(&((*posJoueur).y), &((*posJoueur).x), BAS);
-					}
-					break;
-				case SDLK_RIGHT:
-					deplacementCaisse = deplacementPossible(n, (*posJoueur).y, (*posJoueur).x, 0, DROITE);
-					if(deplacementCaisse < Impossible) {
-						empilerCoup(pile, DROITE, (*posJoueur).y, (*posJoueur).x, deplacementCaisse);
-						deplacerObjet(n, *pile, nbMvt, nbPoussee);
-						calculPositionPositif(&((*posJoueur).y), &((*posJoueur).x), DROITE);
-					}
-					break;
-				case SDLK_LEFT:
-					deplacementCaisse = deplacementPossible(n, (*posJoueur).y, (*posJoueur).x, 0, GAUCHE);
-					if(deplacementCaisse < Impossible) {
-						empilerCoup(pile, GAUCHE, (*posJoueur).y, (*posJoueur).x, deplacementCaisse);
-						deplacerObjet(n, *pile, nbMvt, nbPoussee);
-						calculPositionPositif(&((*posJoueur).y), &((*posJoueur).x), GAUCHE);
-					}
-					break;
-				default:
-					break;
-			}
-			break;
-		default: break;
+	deplacementCaisse = deplacementPossible(n, (*posJoueur).y, (*posJoueur).x, 0, dir);
+	if(deplacementCaisse < Impossible) {
+		empilerCoup(pile, dir, (*posJoueur).y, (*posJoueur).x, deplacementCaisse);
+		deplacerObjet(n, *pile, nbMvt, nbPoussee);
+		calculPositionPositif(&((*posJoueur).y), &((*posJoueur).x), dir);
 	}
-	return 0;
 }

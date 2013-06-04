@@ -12,14 +12,14 @@
  */
 void getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau) {
 	int level_courant = 0;
-	char chaine[NB_BLOCS_LARGEUR+2]= {0};	/* +2 pour '\n' et '\0' */
+	char chaine[BUFFER_WIDTH+2]= {0};	/* +2 pour '\n' et '\0' */
 	char copierAutorise = 0;
 	int i = 0;
 
 	*largeur = 0;
 	*hauteur = 0;
 
-	while (fgets(chaine, NB_BLOCS_LARGEUR+2, niveaux) != NULL) { 	/* +2 pour '\n' et '\0' */
+	while (fgets(chaine, BUFFER_WIDTH+2, niveaux) != NULL) { 	/* +2 pour '\n' et '\0' */
 	
 		/* si on ne trouve pas ";LEVEL x" sur la ligne, on passe a la ligne suivante */
 		if (sscanf(chaine, ";LEVEL %d", &level_courant) <= 0 && copierAutorise == 0) {
@@ -69,20 +69,25 @@ LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur) {
 	
 	/* Initialisation de chaque ligne */
 	for(i = 0; i < hauteur; i++) {
-		ligne = (char*)calloc(largeur, sizeof(char));
+		ligne = (char*)malloc(largeur * sizeof(char));
 		if(ligne == NULL) {
 			fprintf(stderr, "Probleme d'allocation memoire d'une ligne du niveau.\n");
-			freeNiveau(niveau);
+			freeNiveau(niveau, largeur);
 			return AllocationMemoire;
 		}
+		memset(ligne, ' ', largeur * sizeof(char));
 		(*niveau)[i] = ligne;
 	}
 
 	return NoError;
 }
 
-void freeNiveau(Niveau* n) {
-	
+void freeNiveau(Niveau* n, int hauteur) {
+	int i;
+	for(i = 0; i < hauteur; i++) {
+		free((*n)[i]);
+	}
+	free(*n);
 }
 
 LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h, Position* posJoueur) {
@@ -124,7 +129,7 @@ LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int lar
 				break;
 			default:	/* caractere autre */
 				fprintf(stderr, "Le caractere '%c' est inconnu.\n", ligne[k]);
-				freeNiveau(niveau);
+				freeNiveau(niveau, largeur);
 				return CaractereInconnu;
 		}
 

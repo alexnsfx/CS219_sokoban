@@ -24,18 +24,17 @@ void afficheNiveau(Niveau* n, int w, int h) {
 }
 
 int main(int argc, char* argv[]) {
-	Niveau level;
 	int largeurNiveau = 0, hauteurNiveau = 0;
+	char numLvl = 1;
+	Niveau level;
+	CoupsJoues pileDeCoups = (CoupsJoues)NULL;
+
+	int nbPoussee = 0, nbMvt = 0;
+	char continuerBoucle = 1;
 	
-	int poussee = 0, mvt = 0;
-	char result = 0;
-	
-	char numlvl = 1;
-	char continuer = 1;
-	
+	Position positionJoueur;
 	SDL_Surface *ecran;
 	SDL_Event event;
-	Position positionJoueur;
 	SDL_Surface** tableauSprites = (SDL_Surface**)malloc(NB_SPRITE * sizeof(SDL_Surface*));
 	if(tableauSprites == NULL) {
 		fprintf(stderr, "Erreur d'allocation du tableau de sprites.\n");
@@ -43,7 +42,7 @@ int main(int argc, char* argv[]) {
 	}
 	
 	if(argc > 1) {
-		numlvl = atoi(argv[1]);
+		numLvl = atoi(argv[1]);
 	}
 
 	#ifdef SOUND
@@ -55,26 +54,53 @@ int main(int argc, char* argv[]) {
 	FMOD_System_PlaySound(syst, FMOD_CHANNEL_FREE, sound, 0, NULL);
 	#endif
 	
-	CoupsJoues pileDeCoups = (CoupsJoues)NULL;
 	
-	LevelError code_e = readLevel("levels.lvl", &level, numlvl, &largeurNiveau, &hauteurNiveau, &positionJoueur);
+	LevelError code_e = readLevel("levels.lvl", &level, numLvl, &largeurNiveau, &hauteurNiveau, &positionJoueur);
 	if(code_e != NoError) {
 		exit(EXIT_FAILURE);
 	}
+	afficheNiveau(&level, largeurNiveau, hauteurNiveau);
 	printf("PositionJoueur: %d %d\n", positionJoueur.x, positionJoueur.y);	
-
+	
 	initSDL(&ecran);
 	loadSprites(&tableauSprites);
 	dessineNiveau(&level, ecran, largeurNiveau, hauteurNiveau, &tableauSprites);
 
-	while (continuer)
+	while (continuerBoucle)
 	{
 		while(SDL_PollEvent(&event)) {
-			continuer = !clavierHandler(&event, &level, &positionJoueur, &pileDeCoups, &mvt, &poussee);
+			switch((*event).type)
+			{
+				case SDL_QUIT:
+					continuerBoucle = 0;
+				case SDL_KEYDOWN:
+					switch ((*event).key.keysym.sym)
+					{	
+						case SDLK_ESCAPE:
+							continuerBoucle = 0;
+						case SDLK_UP:
+							keyDownHandler(HAUT, n, &positionJoueur, &pileDeCoups, &nbMvt, &nbPoussee);
+							break;
+						case SDLK_DOWN:
+							keyDownHandler(BAS, n, &positionJoueur, &pileDeCoups, &nbMvt, &nbPoussee);
+							break;
+						case SDLK_RIGHT:
+							keyDownHandler(DROITE, n, &positionJoueur, &pileDeCoups, &nbMvt, &nbPoussee);
+							break;
+						case SDLK_LEFT:
+							keyDownHandler(GAUCHE, n, &positionJoueur, &pileDeCoups, &nbMvt, &nbPoussee);
+							break;
+						default: break;
+					}
+					break;
+				default: break;
+			}
+			
 			effacerNiveau(ecran);
 			dessineNiveau(&level, ecran, largeurNiveau, hauteurNiveau, &tableauSprites);
 			SDL_Flip(ecran);
 		}
+		SDL_Delay(20);
 	}
 
 	#ifdef SOUND

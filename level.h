@@ -13,6 +13,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "sokoban.h"
 
 typedef enum {
@@ -26,7 +27,7 @@ typedef enum {
 void getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau);
 
 LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur);
-void freeNiveau(Niveau* n);
+void freeNiveau(Niveau* n, int hauteur);
 LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h, Position* posJoueur);
 LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int largeur, Position* posJoueur);
 
