@@ -1,11 +1,14 @@
 #ifndef SOKOBAN_H
 #define SOKOBAN_H
 
+#define COLOR_BIT 32
 #define TAILLE_BLOC 32
 #define NB_BLOCS_LARGEUR 30
 #define NB_BLOCS_HAUTEUR 18
-#define LARGEUR_FENETRE TAILLE_BLOC*LARGEUR
-#define HAUTEUR_FENETRE TAILLE_BLOC*HAUTEUR
+#define LARGEUR_FENETRE TAILLE_BLOC*NB_BLOCS_LARGEUR
+#define HAUTEUR_FENETRE TAILLE_BLOC*NB_BLOCS_HAUTEUR
+
+#define NB_SPRITE 11
 
 #define	JOUEUR '@'
 #define	MUR '#'
@@ -16,5 +19,10 @@
 #define	JOUEUR_CIBLE '+'
 
 typedef char** Niveau;
+
+typedef struct {
+	int x;
+	int y;
+} Position;
 
 #endif

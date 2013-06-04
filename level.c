@@ -10,7 +10,7 @@
  * \param hauteur Pointeur sur l'entier qui contiendra la hauteur du niveau
  * \return Renvoie un code d'erreur, NoError si tout s'est bien passe
  */
-LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau) {
+void getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau) {
 	int level_courant = 0;
 	char chaine[NB_BLOCS_LARGEUR+2]= {0};	/* +2 pour '\n' et '\0' */
 	char copierAutorise = 0;
@@ -54,8 +54,6 @@ LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur
 		
 		(*hauteur)++;
 	}
-
-	return NoError;
 }
 
 LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur) {
@@ -87,14 +85,14 @@ void freeNiveau(Niveau* n) {
 	
 }
 
-LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h) {
+LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h, Position* posJoueur) {
 	LevelError code_e = NoError;
 	int j = 0;
 	char* buff = (char*)calloc(w+2, sizeof(char));		/* +2 pour '\n' et '\0' */
 	
 	fsetpos(levels, position);
 	while (j<h && fgets(buff, w+2, levels) != NULL) { 	/* +2 pour '\n' et '\0' */
-		code_e = caractereValide(n, buff, j, w);
+		code_e = caractereValide(n, buff, j, w, posJoueur);
 		if(code_e != NoError) {
 			fprintf(stderr, "Caractere invalide present a la ligne %d du niveau.\n", j+1);
 			return CaractereInconnu;
@@ -105,19 +103,21 @@ LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h
 	return NoError;
 }
 
-LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int largeur) {
+LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int largeur, Position* posJoueur) {
 	int k = 0;
 
 	/* nous verifions que chaque caractere de la ligne est autorise */
 	for(k = 0; k < largeur; k++) {
 		switch (ligne[k]) {
 			case JOUEUR:		/* joueur */
-			case MUR:			/* mur */
-			case CIBLE:			/* cible */
-			case CAISSE:		/* caisse */
-			case SOL:			/* sol */
-			case CAISSE_CIBLE:	/* caisse sur cible */
 			case JOUEUR_CIBLE:	/* joueur sur cible */
+				(*posJoueur).x = k;
+				(*posJoueur).y = numeroLigne;
+			case MUR:		/* mur */
+			case CIBLE:		/* cible */
+			case CAISSE:		/* caisse */
+			case SOL:		/* sol */
+			case CAISSE_CIBLE:	/* caisse sur cible */
 				(*niveau)[numeroLigne][k] = ligne[k];	/* on copie le caractere dans le niveau */
 				break;
 			case '\n':	/* fin d'une ligne de largeur inferieure a largeur */
@@ -137,7 +137,7 @@ LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int lar
 	return NoError;
 }
 
-LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau, int* hauteurNiveau) {
+LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau, int* hauteurNiveau, Position* posJoueur) {
 	LevelError code_e = NoError;
 	fpos_t positionDansFichier;
 
@@ -152,11 +152,7 @@ LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau,
 	}
 	
 	/* Recuperation de la taille du niveau */
-	code_e = getTailleNiveau(levels, numero, largeurNiveau, hauteurNiveau, &positionDansFichier);
-	if(code_e != NoError) {
-		fprintf(stderr, "Erreur lors de la lecture des dimensions du niveau %d.\n", numero);
-		return ErreurDimensions;
-	}
+	getTailleNiveau(levels, numero, largeurNiveau, hauteurNiveau, &positionDansFichier);
 
 	code_e = alloueNiveau(niveau, *largeurNiveau, *hauteurNiveau);
 	if(code_e != NoError) {
@@ -164,7 +160,7 @@ LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau,
 		return AllocationMemoire;
 	}
 
-	code_e = remplirNiveau(levels, &positionDansFichier, niveau, *largeurNiveau, *hauteurNiveau);
+	code_e = remplirNiveau(levels, &positionDansFichier, niveau, *largeurNiveau, *hauteurNiveau, posJoueur);
 	if(code_e != NoError) {
 		fprintf(stderr, "Caractere inconnu present dans le niveau %d.\n", numero);
 		return CaractereInconnu;

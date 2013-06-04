@@ -1,6 +1,6 @@
 OUT = sokoban.out
-CFLAGS = -g -Wall `sdl-config --libs --cflags` #-I./include 
-LFLAGS = #-L./lib -lfmodex
+CFLAGS = -g -Wall -lm `sdl-config --cflags` #-I./include 
+LFLAGS = `sdl-config --libs` -ldl -lm #-L./lib -lfmodex
 
 all: main.o level.o mouvement.o graphic.o
 	gcc main.o level.o mouvement.o graphic.o -o $(OUT) $(LFLAGS) 

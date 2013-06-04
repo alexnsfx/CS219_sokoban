@@ -55,8 +55,8 @@ void libererPile(CoupsJoues* pile) {
  * \param mouvement  Mouvement demande
  */
 
-void calculPositionPositif (int* ordonnee, int* abscisse, Coup* mouvement) {
-	switch ((*mouvement).direction) {
+void calculPositionPositif (int* ordonnee, int* abscisse, Direction direction) {
+	switch (direction) {
 				case HAUT:	(*ordonnee)--;
 						break;
 				case BAS:	(*ordonnee)++;	
@@ -77,8 +77,8 @@ void calculPositionPositif (int* ordonnee, int* abscisse, Coup* mouvement) {
  * \param mouvement  Mouvement demande
  */
 
-void calculPositionNegatif (int* ordonnee, int* abscisse, Coup* mouvement) {
-	switch ((*mouvement).direction) {
+void calculPositionNegatif (int* ordonnee, int* abscisse, Direction direction) {
+	switch (direction) {
 				case HAUT:	ordonnee++;
 						break;
 				case BAS:	ordonnee--;	
@@ -110,11 +110,11 @@ void deplacerObjet(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee) {
 	abscisseCaisseFin = (*mouvement).posDepartAbscisse;
 	abscisse = (*mouvement).posDepartAbscisse;
 
-	calculPositionPositif (&ordonnee, &abscisse, mouvement);
+	calculPositionPositif (&ordonnee, &abscisse, (*mouvement).direction);
 
 	if ((*mouvement).caisseDeplacee == 1 ) {	
-		calculPositionPositif (&ordonneeCaisseFin, &abscisseCaisseFin, mouvement);
-		calculPositionPositif (&ordonneeCaisseFin, &abscisseCaisseFin, mouvement);
+		calculPositionPositif (&ordonneeCaisseFin, &abscisseCaisseFin, (*mouvement).direction);
+		calculPositionPositif (&ordonneeCaisseFin, &abscisseCaisseFin, (*mouvement).direction);
 		majNiveau(ordonnee, abscisse, ordonneeCaisseFin, abscisseCaisseFin, n);
 		(*nbPoussee)++;
 	}
@@ -136,15 +136,15 @@ void deplacerObjetRetour(Niveau* n, Coup* mouvement, int* nbMvt, int* nbPoussee)
 	int ordonnee = (*mouvement).posDepartOrdonnee;
 	int abscisse = (*mouvement).posDepartAbscisse;
 
-	calculPositionNegatif (&ordonnee, &abscisse, mouvement);
+	calculPositionNegatif (&ordonnee, &abscisse, (*mouvement).direction);
 	majNiveau((*mouvement).posDepartOrdonnee,(*mouvement).posDepartAbscisse, ordonnee, abscisse, n);
 	(*nbMvt)--;
 
 	if ((*mouvement).caisseDeplacee == 1) {		
-	calculPositionPositif (&ordonnee, &abscisse, mouvement);
-	calculPositionPositif (&ordonnee, &abscisse, mouvement);
-	majNiveau(ordonnee, abscisse,(*mouvement).posDepartOrdonnee,(*mouvement).posDepartAbscisse, n);
-	(*nbPoussee)--;
+		calculPositionPositif (&ordonnee, &abscisse, (*mouvement).direction);
+		calculPositionPositif (&ordonnee, &abscisse, (*mouvement).direction);
+		majNiveau(ordonnee, abscisse, (*mouvement).posDepartOrdonnee, (*mouvement).posDepartAbscisse, n);
+		(*nbPoussee)--;
 	}
 }
 
@@ -226,7 +226,7 @@ void annulerCoup(Niveau* n, CoupsJoues* pile, int* nbMvt, int* nbPoussee) {
  * \param direction Donne la direction du deplacement
  * \return Renvoie un code d'erreur, 0 si le deplacement est possible
  */
-char deplacementPossible(Niveau* n, int ordonnee, int abscisse, int liberte, Direction direction) {
+TypeDeplacement deplacementPossible(Niveau* n, int ordonnee, int abscisse, int liberte, Direction direction) {
 	int ordo = ordonnee;
 	int absc = abscisse;
 	switch (direction) {
@@ -238,7 +238,7 @@ char deplacementPossible(Niveau* n, int ordonnee, int abscisse, int liberte, Dir
 						break;	
 				case DROITE:	absc++;
 						break;	
-				default:	return 2;	/* direction inconnue */
+				default:	return Impossible;	/* direction inconnue */
 	}
 
 	switch ((*n)[ordo][absc]) {
@@ -248,13 +248,17 @@ char deplacementPossible(Niveau* n, int ordonnee, int abscisse, int liberte, Dir
 					return 1; /* l'objet ne peut pas se deplacer*/
 				case CAISSE:	
 				case CAISSE_CIBLE:	
-					if(liberte == 0) {	/* on re-appelle la fonction pour voir si la caisse */
-								/* rencontree peut se deplacer */ 
-						return deplacementPossible(n, ordo, absc, 1, direction);
+					if(liberte == 0) {	/* on re-appelle la fonction pour voir si la caisse rencontree peut se deplacer */
+						if(deplacementPossible(n, ordo, absc, 1, direction) < Impossible) {
+							return PossibleAvecCaisse;
+						}
+						else {
+							return Impossible;
+						}
 					}
 					else {	/* test du deplacement de la caisse */
-						return 1;	/* si elle ne peut pas se deplacer */
+						return Impossible;	/* si elle ne peut pas se deplacer */
 					}
-				default:	return 0;	/* caractere autre (sol, cible) */
+				default:	return Possible;	/* caractere autre (sol, cible), deplacement sans caisse */
 	}
 }

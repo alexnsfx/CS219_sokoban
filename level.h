@@ -18,19 +18,18 @@
 typedef enum {
 	NoError,
 	FichierIntrouvable,
-	ErreurDimensions,
 	AllocationMemoire,
 	CaractereInconnu
 } LevelError;
 
 
-LevelError getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau);
+void getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau);
 
 LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur);
 void freeNiveau(Niveau* n);
-LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h);
-LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int largeur);
+LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h, Position* posJoueur);
+LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int largeur, Position* posJoueur);
 
-LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau, int* hauteurNiveau);
+LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau, int* hauteurNiveau, Position* posJoueur);
 
 #endif
