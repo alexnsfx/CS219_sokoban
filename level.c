@@ -145,7 +145,7 @@ LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau,
 	*largeurNiveau = 0;
 	
 	/* Ouverture du fichier */
-	FILE* levels = fopen("levels.lvl", "r");
+	FILE* levels = fopen(path, "r");
 	if(levels == NULL) {
 		fprintf(stderr, "Fichier de niveaux introuvable : %s.\n", path);
 		return FichierIntrouvable;
