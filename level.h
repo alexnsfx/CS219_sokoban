@@ -1,7 +1,7 @@
 ﻿/**
  * \file level.h
  * \brief (Prototypes) Fonctions utiles a la lecture d'un niveau
- * \author Dorialex
+ * \author Doriane PERARD et Alex NODET
  * \version 0.1
  * \date 16 mai 2013
  *
@@ -18,19 +18,47 @@
 
 typedef enum {
 	NoError,
+	UndefinedLevel,
+	UndefinedParameter,
 	FichierIntrouvable,
 	AllocationMemoire,
 	CaractereInconnu
 } LevelError;
 
+typedef enum {
+	LevelReset,
+	LevelPrevious,
+	LevelNext
+} UpdateType;
 
-void getTailleNiveau(FILE* niveaux, int numero, int* largeur, int* hauteur, fpos_t* positionNiveau);
+typedef enum {
+	CibleNonValidee,
+	CibleValidee
+} ResultatCible;
 
-LevelError alloueNiveau(Niveau* niveau, int largeur, int hauteur);
-void freeNiveau(Niveau* n, int hauteur);
-LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, int w, int h, Position* posJoueur);
-LevelError caractereValide(Niveau* niveau, char* ligne, int numeroLigne, int largeur, Position* posJoueur);
+typedef struct Cible Cible;
+struct Cible {
+	unsigned int x;
+	unsigned int y;
+	ResultatCible validee;
+	Cible* next;
+};
 
-LevelError readLevel(char* path, Niveau* niveau, int numero, int* largeurNiveau, int* hauteurNiveau, Position* posJoueur);
+typedef Cible* PileCible;
+
+ResultatCible toutesCiblesValidees(PileCible* pile, Niveau* niveau);
+PileError empilerCible(PileCible* pile, unsigned int x, unsigned int y, char validee);
+void libererPileCible(PileCible* pile);
+
+void getTailleNiveau(FILE* niveaux, unsigned int numero, unsigned int* largeur, unsigned int* hauteur, fpos_t* positionNiveau);
+
+LevelError alloueNiveau(Niveau* niveau, unsigned int largeur, unsigned int hauteur);
+void freeNiveau(Niveau* n, unsigned int hauteur);
+LevelError remplirNiveau(FILE* levels, fpos_t* position, Niveau* n, unsigned int w, unsigned int h, Position* posJoueur, PileCible* pileCible);
+LevelError caractereValide(Niveau* niveau, char* ligne, unsigned int numeroLigne, unsigned int largeur, Position* posJoueur, PileCible* pileCible);
+
+LevelError readLevel(char* path, Niveau* niveau, unsigned int numero, unsigned int* largeurNiveau, unsigned int* hauteurNiveau, Position* posJoueur, PileCible* pileCible);
+LevelError updateLevel(UpdateType operation, char* fichierNiveaux, Niveau* niveau, Position* posJoueur, PileCible* pileCible, unsigned int* numLvl, unsigned int* hNiveau, unsigned int* lNiveau);
+LevelError createLevel(Niveau* niveau, unsigned int* largeurNiveau, unsigned int* hauteurNiveau);
 
 #endif

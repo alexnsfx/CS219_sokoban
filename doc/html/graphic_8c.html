@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Pokeban: Référence du fichier /home/alexn/Bureau/CS219_sokoban/graphic.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<h1>Référence du fichier /home/alexn/Bureau/CS219_sokoban/graphic.c</h1>  </div>
+</div>
+<div class="contents">
+<code>#include &quot;<a class="el" href="graphic_8h_source.html">graphic.h</a>&quot;</code><br/>
+
+<p><a href="graphic_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="graphic_8h.html#a036cbccdb9fa990c68ae98b5cc630b69">SDLInitError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a2f32ad8221e9ec9363158348a3c7db09">initSDL</a> (SDL_Surface **ecran)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a233b4fc393d71ad84a83a00b86a026d2">freeSDL</a> (SDL_Surface ***sprites)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="graphic_8h.html#a036cbccdb9fa990c68ae98b5cc630b69">SDLInitError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a84eb7d508928c56e4a49719727da69e6">loadSprites</a> (SDL_Surface ***sprites)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Charge toutes les sprites dans un tableau.  <a href="#a84eb7d508928c56e4a49719727da69e6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a292d2a76ba9683e3f0c39f3e39783e15">libereSprites</a> (SDL_Surface ***sprites)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#ae3d8e6f87acca1ed89c5fa01d88abfdb">dessineEntete</a> (SDL_Surface *fond)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a4a53f63c038718889fe3c71aa6a03341">dessineCompteurs</a> (SDL_Surface *fond, unsigned int nbMvt, unsigned int nbPoussee)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a51d3dcb11b1a5e431105704f423152bf">dessinerDescriptif</a> (SDL_Surface *fond, <a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a> objetADessiner, SDL_Surface ***sprites)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#aa95f7099718f5c42fd0ed51765b33f1d">dessinerElement</a> (<a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a> objetADessiner, int abscisse, int ordonnee, SDL_Surface *fond, SDL_Surface ***sprites, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *level, int w, int h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a8f6bdbbd805ed3412f8b1b862f875933">dessineNiveau</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, SDL_Surface *fond, unsigned int largeur, unsigned int hauteur, SDL_Surface ***sprites)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a98f1a8af8359dd9af1897e4f8776fb36">effacerNiveau</a> (SDL_Surface *fond)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a032dd982456ce5a15b8cfaecf0bbd725">choixSprite</a> (char objet)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphic_8c.html#a5c72bb6487a2fec0bd09e5b27f5b61ca">choixCaractere</a> (<a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a> sprite)</td></tr>
+</table>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a5c72bb6487a2fec0bd09e5b27f5b61ca"></a><!-- doxytag: member="graphic.c::choixCaractere" ref="a5c72bb6487a2fec0bd09e5b27f5b61ca" args="(SpriteType sprite)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char choixCaractere </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a>&nbsp;</td>
+          <td class="paramname"> <em>sprite</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00298">298</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a032dd982456ce5a15b8cfaecf0bbd725"></a><!-- doxytag: member="graphic.c::choixSprite" ref="a032dd982456ce5a15b8cfaecf0bbd725" args="(char objet)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a> choixSprite </td>
+          <td>(</td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>objet</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00277">277</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a53f63c038718889fe3c71aa6a03341"></a><!-- doxytag: member="graphic.c::dessineCompteurs" ref="a4a53f63c038718889fe3c71aa6a03341" args="(SDL_Surface *fond, unsigned int nbMvt, unsigned int nbPoussee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dessineCompteurs </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>fond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>nbMvt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>nbPoussee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00129">129</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3d8e6f87acca1ed89c5fa01d88abfdb"></a><!-- doxytag: member="graphic.c::dessineEntete" ref="ae3d8e6f87acca1ed89c5fa01d88abfdb" args="(SDL_Surface *fond)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dessineEntete </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>fond</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00084">84</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f6bdbbd805ed3412f8b1b862f875933"></a><!-- doxytag: member="graphic.c::dessineNiveau" ref="a8f6bdbbd805ed3412f8b1b862f875933" args="(Niveau *n, SDL_Surface *fond, unsigned int largeur, unsigned int hauteur, SDL_Surface ***sprites)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dessineNiveau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>fond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>hauteur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface ***&nbsp;</td>
+          <td class="paramname"> <em>sprites</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00252">252</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51d3dcb11b1a5e431105704f423152bf"></a><!-- doxytag: member="graphic.c::dessinerDescriptif" ref="a51d3dcb11b1a5e431105704f423152bf" args="(SDL_Surface *fond, SpriteType objetADessiner, SDL_Surface ***sprites)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dessinerDescriptif </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>fond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a>&nbsp;</td>
+          <td class="paramname"> <em>objetADessiner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface ***&nbsp;</td>
+          <td class="paramname"> <em>sprites</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00179">179</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa95f7099718f5c42fd0ed51765b33f1d"></a><!-- doxytag: member="graphic.c::dessinerElement" ref="aa95f7099718f5c42fd0ed51765b33f1d" args="(SpriteType objetADessiner, int abscisse, int ordonnee, SDL_Surface *fond, SDL_Surface ***sprites, Niveau *level, int w, int h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dessinerElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graphic_8h.html#ac6fa10729dffeb6a192492f13c25e31a">SpriteType</a>&nbsp;</td>
+          <td class="paramname"> <em>objetADessiner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>abscisse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ordonnee</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>fond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface ***&nbsp;</td>
+          <td class="paramname"> <em>sprites</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>h</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00233">233</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98f1a8af8359dd9af1897e4f8776fb36"></a><!-- doxytag: member="graphic.c::effacerNiveau" ref="a98f1a8af8359dd9af1897e4f8776fb36" args="(SDL_Surface *fond)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void effacerNiveau </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>fond</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00271">271</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a233b4fc393d71ad84a83a00b86a026d2"></a><!-- doxytag: member="graphic.c::freeSDL" ref="a233b4fc393d71ad84a83a00b86a026d2" args="(SDL_Surface ***sprites)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeSDL </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface ***&nbsp;</td>
+          <td class="paramname"> <em>sprites</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00026">26</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f32ad8221e9ec9363158348a3c7db09"></a><!-- doxytag: member="graphic.c::initSDL" ref="a2f32ad8221e9ec9363158348a3c7db09" args="(SDL_Surface **ecran)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graphic_8h.html#a036cbccdb9fa990c68ae98b5cc630b69">SDLInitError</a> initSDL </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface **&nbsp;</td>
+          <td class="paramname"> <em>ecran</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00003">3</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a292d2a76ba9683e3f0c39f3e39783e15"></a><!-- doxytag: member="graphic.c::libereSprites" ref="a292d2a76ba9683e3f0c39f3e39783e15" args="(SDL_Surface ***sprites)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void libereSprites </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface ***&nbsp;</td>
+          <td class="paramname"> <em>sprites</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00070">70</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84eb7d508928c56e4a49719727da69e6"></a><!-- doxytag: member="graphic.c::loadSprites" ref="a84eb7d508928c56e4a49719727da69e6" args="(SDL_Surface ***sprites)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graphic_8h.html#a036cbccdb9fa990c68ae98b5cc630b69">SDLInitError</a> loadSprites </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface ***&nbsp;</td>
+          <td class="paramname"> <em>sprites</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Charge toutes les sprites dans un tableau. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>SDL_Surface***</em>&nbsp;</td><td>Pointeur sur le tableau de pointeurs de SDL_Surface.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie InitOk s'il n'y a pas eu de probleme de chargement, InitError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="graphic_8c_source.html#l00042">42</a> du fichier <a class="el" href="graphic_8c_source.html">graphic.c</a>.</p>
+
+</div>
+</div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Définition de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Fri Jun 7 2013 13:55:27 pour Pokeban par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

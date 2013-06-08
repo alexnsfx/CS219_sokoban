@@ -1,0 +1,23 @@
+CS219_sokoban
+=============
+
+Mini projet de CS219 - Sokoban
+
+Realisation d'un Sokoban sur le theme Pokemon : le Pokeban.
+
+JEU
+	Fleches		- Bouger Pikachu
+	Ctrl^Z		- Annuler le mouvement
+	E		- Aller au niveau precedent
+	R 		- Reinitialiser le niveau
+	T 		- Passer au niveau suivant, il faut l'avoir fini une fois pour y acceder
+	A 		- Sauvegarder la partie
+	Q 		- Charger la partie
+	Echap 		- Quitter
+
+EDITEUR
+	S 		- Sauvegarder le niveau
+	Molette 	- Selectionner une sprite
+	Clic gauche 	- Placer le sprite selectionne
+	Clic droit 	- Placer du sol
+	Echap 		- Quitter
