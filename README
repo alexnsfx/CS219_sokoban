@@ -9,6 +9,8 @@ Realisation d'un Sokoban sur le theme Pokemon : le Pokeban.
 
 /!\ Bien penser a convertir <LF> en <CR><LF> dans levels.lvl suivant l'OS utilise.
 
+Testé sous Debian, Ubuntu et Windows7-FamilialePremium
+
 JEU
 	Fleches		- Bouger Pikachu
 	Ctrl^Z		- Annuler le mouvement
