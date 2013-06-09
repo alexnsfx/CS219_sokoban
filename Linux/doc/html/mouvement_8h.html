@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Pokeban: Référence du fichier /home/alexn/Bureau/CS219_sokoban/mouvement.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définition de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<h1>Référence du fichier /home/alexn/Bureau/CS219_sokoban/mouvement.h</h1>  </div>
+</div>
+<div class="contents">
+
+<p>(Prototypes) Fonctions relatives aux deplacements.  
+<a href="#_details">Plus de détails...</a></p>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="sokoban_8h_source.html">sokoban.h</a>&quot;</code><br/>
+
+<p><a href="mouvement_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_coup.html">Coup</a></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_coup.html">Coup</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a111a326d7d03b95c1c21bb3bd35cb98f">Coup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="struct_coup.html">Coup</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#ad1369c483381bf243ee24b4e293970f9">CoupsJoues</a></td></tr>
+<tr><td colspan="2"><h2><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> { <a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2">HAUT</a>, 
+<a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa">BAS</a>, 
+<a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86">GAUCHE</a>, 
+<a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343">DROITE</a>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065">TypeDeplacement</a> { <a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065a1a4e87336b21f41f752b4ea753ad7436">Possible</a>, 
+<a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065a23b057547d6dc235e1e5e161905f02c4">PossibleAvecCaisse</a>, 
+<a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065aedd2f06792acbebf30a0b070bfe8c642">Impossible</a>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a7dc192539b80c80bf17dde073bd3714b">SensDeplacement</a> { <a class="el" href="mouvement_8h.html#a7dc192539b80c80bf17dde073bd3714ba77dbb9fa05e273375f88b75db92e6678">Positif</a> =  1, 
+<a class="el" href="mouvement_8h.html#a7dc192539b80c80bf17dde073bd3714bad76e7e352ba4b54615a9c0b3276d04ba">Negatif</a> =  -1
+ }</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">PileError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a718bed3abb7b1185222a583e65fc1029">empilerCoup</a> (<a class="el" href="struct_coup.html">CoupsJoues</a> *pile, <a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, <a class="el" href="struct_position.html">Position</a> posDepart, char caisseDeplacee)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Empile les coups.  <a href="#a718bed3abb7b1185222a583e65fc1029"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_coup.html">Coup</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#abbe0dbf3269a4fb688c6eea2b228911b">depilerCoup</a> (<a class="el" href="struct_coup.html">CoupsJoues</a> *pile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Depile la pile de coup et renvoie le coup depile.  <a href="#abbe0dbf3269a4fb688c6eea2b228911b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a523117f9d7de10de68685072a9e63fd7">libererPile</a> (<a class="el" href="struct_coup.html">CoupsJoues</a> *pile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libere la pile.  <a href="#a523117f9d7de10de68685072a9e63fd7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">PileError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a2009bd1964fe3b84fa73137dc6de39d2">inverserPileCoups</a> (<a class="el" href="struct_coup.html">CoupsJoues</a> *pile, <a class="el" href="struct_coup.html">CoupsJoues</a> *pileInversee)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inverse l'ordre de la pile.  <a href="#a2009bd1964fe3b84fa73137dc6de39d2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a87d3c362b113eaa42681f4ed0dab2707">deplacerObjet</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, <a class="el" href="struct_coup.html">Coup</a> mouvement, unsigned int *nbMvt, unsigned int *nbPoussee)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deplace un objet dans la direction souhaitee.  <a href="#a87d3c362b113eaa42681f4ed0dab2707"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a79b655e7fc40ff665cc92e910c6ec90f">deplacerObjetRetour</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, <a class="el" href="struct_coup.html">Coup</a> mouvement, unsigned int *nbMvt, unsigned int *nbPoussee)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Redeplace l'objet comme il etait un coup avant.  <a href="#a79b655e7fc40ff665cc92e910c6ec90f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a46d78cb173d0bca38ca32eab6e86043b">majNiveau</a> (<a class="el" href="struct_position.html">Position</a> positionDepart, <a class="el" href="struct_position.html">Position</a> position, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remplie le tableau avec les bons caracteres.  <a href="#a46d78cb173d0bca38ca32eab6e86043b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065">TypeDeplacement</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a3a2c43dfdf4c5467706c5419c1291af7">deplacementPossible</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, <a class="el" href="struct_position.html">Position</a> position, char liberte, <a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Teste si le deplacement vers la direction souhaitee est possible.  <a href="#a3a2c43dfdf4c5467706c5419c1291af7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#ad21feb36ec8061cbb4aad37bdcb17c25">calculPosition</a> (<a class="el" href="struct_position.html">Position</a> *position, <a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, <a class="el" href="mouvement_8h.html#a7dc192539b80c80bf17dde073bd3714b">SensDeplacement</a> sens)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcule la position apres deplacement.  <a href="#ad21feb36ec8061cbb4aad37bdcb17c25"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement_8h.html#a521e1ffa3ccf7c7363138b33f242bdf8">arrowKeyDownHandler</a> (<a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> dir, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, <a class="el" href="struct_position.html">Position</a> *posJoueur, <a class="el" href="struct_coup.html">CoupsJoues</a> *pile, unsigned int *nbMvt, unsigned int *nbPoussee)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>(Prototypes) Fonctions relatives aux deplacements. </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>Doriane PERARD et Alex NODET </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd>0.1 </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>7 juin 2013 </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="mouvement_8h_source.html">mouvement.h</a>.</p>
+<hr/><h2>Documentation des définitions de type</h2>
+<a class="anchor" id="a111a326d7d03b95c1c21bb3bd35cb98f"></a><!-- doxytag: member="mouvement.h::Coup" ref="a111a326d7d03b95c1c21bb3bd35cb98f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_coup.html">Coup</a> <a class="el" href="struct_coup.html">Coup</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="mouvement_8h_source.html#l00021">21</a> du fichier <a class="el" href="mouvement_8h_source.html">mouvement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1369c483381bf243ee24b4e293970f9"></a><!-- doxytag: member="mouvement.h::CoupsJoues" ref="ad1369c483381bf243ee24b4e293970f9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="struct_coup.html">Coup</a>* <a class="el" href="struct_coup.html">CoupsJoues</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="mouvement_8h_source.html#l00030">30</a> du fichier <a class="el" href="mouvement_8h_source.html">mouvement.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Documentation du type de l'énumération</h2>
+<a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aa"></a><!-- doxytag: member="mouvement.h::Direction" ref="a224b9163917ac32fc95a60d8c1eec3aa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Valeurs énumérées: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2"></a><!-- doxytag: member="HAUT" ref="a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2" args="" -->HAUT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa"></a><!-- doxytag: member="BAS" ref="a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa" args="" -->BAS</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86"></a><!-- doxytag: member="GAUCHE" ref="a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86" args="" -->GAUCHE</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343"></a><!-- doxytag: member="DROITE" ref="a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343" args="" -->DROITE</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8h_source.html#l00017">17</a> du fichier <a class="el" href="mouvement_8h_source.html">mouvement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7dc192539b80c80bf17dde073bd3714b"></a><!-- doxytag: member="mouvement.h::SensDeplacement" ref="a7dc192539b80c80bf17dde073bd3714b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mouvement_8h.html#a7dc192539b80c80bf17dde073bd3714b">SensDeplacement</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Valeurs énumérées: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a7dc192539b80c80bf17dde073bd3714ba77dbb9fa05e273375f88b75db92e6678"></a><!-- doxytag: member="Positif" ref="a7dc192539b80c80bf17dde073bd3714ba77dbb9fa05e273375f88b75db92e6678" args="" -->Positif</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a7dc192539b80c80bf17dde073bd3714bad76e7e352ba4b54615a9c0b3276d04ba"></a><!-- doxytag: member="Negatif" ref="a7dc192539b80c80bf17dde073bd3714bad76e7e352ba4b54615a9c0b3276d04ba" args="" -->Negatif</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8h_source.html#l00038">38</a> du fichier <a class="el" href="mouvement_8h_source.html">mouvement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ddecb4620bb48fa1bf8143779c65065"></a><!-- doxytag: member="mouvement.h::TypeDeplacement" ref="a2ddecb4620bb48fa1bf8143779c65065" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065">TypeDeplacement</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Valeurs énumérées: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a2ddecb4620bb48fa1bf8143779c65065a1a4e87336b21f41f752b4ea753ad7436"></a><!-- doxytag: member="Possible" ref="a2ddecb4620bb48fa1bf8143779c65065a1a4e87336b21f41f752b4ea753ad7436" args="" -->Possible</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a2ddecb4620bb48fa1bf8143779c65065a23b057547d6dc235e1e5e161905f02c4"></a><!-- doxytag: member="PossibleAvecCaisse" ref="a2ddecb4620bb48fa1bf8143779c65065a23b057547d6dc235e1e5e161905f02c4" args="" -->PossibleAvecCaisse</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a2ddecb4620bb48fa1bf8143779c65065aedd2f06792acbebf30a0b070bfe8c642"></a><!-- doxytag: member="Impossible" ref="a2ddecb4620bb48fa1bf8143779c65065aedd2f06792acbebf30a0b070bfe8c642" args="" -->Impossible</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8h_source.html#l00032">32</a> du fichier <a class="el" href="mouvement_8h_source.html">mouvement.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a521e1ffa3ccf7c7363138b33f242bdf8"></a><!-- doxytag: member="mouvement.h::arrowKeyDownHandler" ref="a521e1ffa3ccf7c7363138b33f242bdf8" args="(Direction dir, Niveau *n, Position *posJoueur, CoupsJoues *pile, unsigned int *nbMvt, unsigned int *nbPoussee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void arrowKeyDownHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&nbsp;</td>
+          <td class="paramname"> <em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a> *&nbsp;</td>
+          <td class="paramname"> <em>posJoueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">CoupsJoues</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>nbMvt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>nbPoussee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00289">289</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad21feb36ec8061cbb4aad37bdcb17c25"></a><!-- doxytag: member="mouvement.h::calculPosition" ref="ad21feb36ec8061cbb4aad37bdcb17c25" args="(Position *position, Direction direction, SensDeplacement sens)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a> *&nbsp;</td>
+          <td class="paramname"> <em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&nbsp;</td>
+          <td class="paramname"> <em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mouvement_8h.html#a7dc192539b80c80bf17dde073bd3714b">SensDeplacement</a>&nbsp;</td>
+          <td class="paramname"> <em>sens</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calcule la position apres deplacement. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td><a class="el" href="struct_position.html" title="Definit une position.">Position</a> initiale avant deplacement </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>direction</em>&nbsp;</td><td>Direction du deplacement </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>sens</em>&nbsp;</td><td>Positif pour un coup normal, negatif pour un retour en arriere </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00275">275</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abbe0dbf3269a4fb688c6eea2b228911b"></a><!-- doxytag: member="mouvement.h::depilerCoup" ref="abbe0dbf3269a4fb688c6eea2b228911b" args="(CoupsJoues *pile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_coup.html">Coup</a>* depilerCoup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">CoupsJoues</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Depile la pile de coup et renvoie le coup depile. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pile a depiler</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie NULL si la pile n'existe pas, ou le coup depile </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00043">43</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a2c43dfdf4c5467706c5419c1291af7"></a><!-- doxytag: member="mouvement.h::deplacementPossible" ref="a3a2c43dfdf4c5467706c5419c1291af7" args="(Niveau *n, Position position, char liberte, Direction direction)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mouvement_8h.html#a2ddecb4620bb48fa1bf8143779c65065">TypeDeplacement</a> deplacementPossible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="paramname"> <em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>liberte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Teste si le deplacement vers la direction souhaitee est possible. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Pointeur sur le tableau de niveaux </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td><a class="el" href="struct_position.html" title="Definit une position.">Position</a> de l'objet a deplacer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>liberte</em>&nbsp;</td><td>Limiter a un niveau de recurrence </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>direction</em>&nbsp;</td><td>Donne la direction du deplacement</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie un code d'erreur pour savoir si le deplacement est possible </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00235">235</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87d3c362b113eaa42681f4ed0dab2707"></a><!-- doxytag: member="mouvement.h::deplacerObjet" ref="a87d3c362b113eaa42681f4ed0dab2707" args="(Niveau *n, Coup mouvement, unsigned int *nbMvt, unsigned int *nbPoussee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacerObjet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">Coup</a>&nbsp;</td>
+          <td class="paramname"> <em>mouvement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>nbMvt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>nbPoussee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deplace un objet dans la direction souhaitee. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Pointeur sur le tableau de niveaux </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouvement</em>&nbsp;</td><td>Deplacement souhaite </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nbMvt</em>&nbsp;</td><td>Compteur de mouvements </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nbPoussee</em>&nbsp;</td><td>Compteur de poussees de caisses </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00111">111</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79b655e7fc40ff665cc92e910c6ec90f"></a><!-- doxytag: member="mouvement.h::deplacerObjetRetour" ref="a79b655e7fc40ff665cc92e910c6ec90f" args="(Niveau *n, Coup mouvement, unsigned int *nbMvt, unsigned int *nbPoussee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void deplacerObjetRetour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">Coup</a>&nbsp;</td>
+          <td class="paramname"> <em>mouvement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>nbMvt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>nbPoussee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Redeplace l'objet comme il etait un coup avant. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Pointeur sur le tableau de niveaux </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouvement</em>&nbsp;</td><td>Deplacement souhaite </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nbMvt</em>&nbsp;</td><td>Compteur de mouvements </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nbPoussee</em>&nbsp;</td><td>Compteur de poussees de caisses </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00143">143</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a718bed3abb7b1185222a583e65fc1029"></a><!-- doxytag: member="mouvement.h::empilerCoup" ref="a718bed3abb7b1185222a583e65fc1029" args="(CoupsJoues *pile, Direction direction, Position posDepart, char caisseDeplacee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">PileError</a> empilerCoup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">CoupsJoues</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mouvement_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&nbsp;</td>
+          <td class="paramname"> <em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="paramname"> <em>posDepart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>caisseDeplacee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Empile les coups. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pile a depiler  Direction du coup  <a class="el" href="struct_position.html" title="Definit une position.">Position</a> avant le coup  1 Si une caisse a ete deplacee, 0 si non</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedPile si l'une des piles n'existe pas, p_error lors d'un probleme d'inversion, Ok lorsque la fonction s'est executee correctement </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00014">14</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2009bd1964fe3b84fa73137dc6de39d2"></a><!-- doxytag: member="mouvement.h::inverserPileCoups" ref="a2009bd1964fe3b84fa73137dc6de39d2" args="(CoupsJoues *pile, CoupsJoues *pileInversee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">PileError</a> inverserPileCoups </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">CoupsJoues</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">CoupsJoues</a> *&nbsp;</td>
+          <td class="paramname"> <em>pileInversee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inverse l'ordre de la pile. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pile d'origine </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pileInversee</em>&nbsp;</td><td>Pile inversee (apres execution de la fonction)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedPile si l'une des piles n'existe pas, p_error lors d'un probleme d'inversion, Ok lorsque la fonction s'est executee correctement </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00082">82</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a523117f9d7de10de68685072a9e63fd7"></a><!-- doxytag: member="mouvement.h::libererPile" ref="a523117f9d7de10de68685072a9e63fd7" args="(CoupsJoues *pile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void libererPile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coup.html">CoupsJoues</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libere la pile. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pile a liberer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00060">60</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a46d78cb173d0bca38ca32eab6e86043b"></a><!-- doxytag: member="mouvement.h::majNiveau" ref="a46d78cb173d0bca38ca32eab6e86043b" args="(Position positionDepart, Position position, Niveau *n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void majNiveau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="paramname"> <em>positionDepart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="paramname"> <em>positionFin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remplie le tableau avec les bons caracteres. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>positionDepart</em>&nbsp;</td><td><a class="el" href="struct_position.html" title="Definit une position.">Position</a> de l'objet avant deplacementcement </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>positionFin</em>&nbsp;</td><td><a class="el" href="struct_position.html" title="Definit une position.">Position</a> de l'objet apres deplacement </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Pointeur sur le tableau de niveaux </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="mouvement_8c_source.html#l00171">171</a> du fichier <a class="el" href="mouvement_8c_source.html">mouvement.c</a>.</p>
+
+</div>
+</div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Définition de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Fri Jun 7 2013 13:55:27 pour Pokeban par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

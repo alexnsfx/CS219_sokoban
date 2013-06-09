@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Pokeban:  Fichier source de /home/alexn/Bureau/CS219_sokoban/sokoban.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>/home/alexn/Bureau/CS219_sokoban/sokoban.h</h1>  </div>
+</div>
+<div class="contents">
+<a href="sokoban_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿
+<a name="l00010"></a>00010 <span class="preprocessor">#ifndef SOKOBAN_H</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#define SOKOBAN_H</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span>
+<a name="l00013"></a><a class="code" href="sokoban_8h.html#a73b3bbc51c65bf165939cc7b57e9eb4b">00013</a> <span class="preprocessor">#define NOM_JEU &quot;Pokeban - Le sokoban pokemon !&quot;</span>
+<a name="l00014"></a><a class="code" href="sokoban_8h.html#a715117b99517e1b2eaa86d2913d639eb">00014</a> <span class="preprocessor"></span><span class="preprocessor">#define TITRE_ENTETE &quot;Pokeban&quot;</span>
+<a name="l00015"></a><a class="code" href="sokoban_8h.html#a6ffbae345d7567d4d91b5a8a6fb1757b">00015</a> <span class="preprocessor"></span><span class="preprocessor">#define FICHIER_NIVEAUX &quot;levels.lvl&quot;</span>
+<a name="l00016"></a><a class="code" href="sokoban_8h.html#af19f60c87d370f9f92c29dbd48f438be">00016</a> <span class="preprocessor"></span><span class="preprocessor">#define FICHIER_TEMP &quot;levels.tmp&quot;</span>
+<a name="l00017"></a><a class="code" href="sokoban_8h.html#a0377839c8d675a0b95a4da0511fdafd3">00017</a> <span class="preprocessor"></span><span class="preprocessor">#define NOM_POLICE &quot;pokemon.ttf&quot;</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span>
+<a name="l00019"></a><a class="code" href="sokoban_8h.html#a5bb4257ca9fa4bfcf9391b7895b97761">00019</a> <span class="preprocessor">#define MAX_LEVEL 88</span>
+<a name="l00020"></a><a class="code" href="sokoban_8h.html#acf32f403bbd5564027438bf64b33c0b1">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define BUFFER_WIDTH 64</span>
+<a name="l00021"></a><a class="code" href="sokoban_8h.html#ade88d1d9b002d3dad3b08142a0bb8d39">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define SAVE_BUFFER_WIDTH 45</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a><a class="code" href="sokoban_8h.html#ab2c4787edcc79f8707120ceb2daacebb">00023</a> <span class="preprocessor">#define COLOR_BIT 32</span>
+<a name="l00024"></a><a class="code" href="sokoban_8h.html#abad9ad5ae94fd56569e71c156349030b">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define TAILLE_BLOC 32</span>
+<a name="l00025"></a><a class="code" href="sokoban_8h.html#a5b621c07985e98b04fc2d2195b85ad69">00025</a> <span class="preprocessor"></span><span class="preprocessor">#define NB_BLOCS_LARGEUR 30</span>
+<a name="l00026"></a><a class="code" href="sokoban_8h.html#ad0de8de53b10369f89648fed34ce16c9">00026</a> <span class="preprocessor"></span><span class="preprocessor">#define NB_BLOCS_HAUTEUR 18</span>
+<a name="l00027"></a><a class="code" href="sokoban_8h.html#a54c2ee17ec8649410ae596b344bca0c0">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define ENTETE_HAUTEUR 2</span>
+<a name="l00028"></a><a class="code" href="sokoban_8h.html#a6068a247ff9ece1b0a9773c58144906c">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define LARGEUR_FENETRE TAILLE_BLOC * NB_BLOCS_LARGEUR</span>
+<a name="l00029"></a><a class="code" href="sokoban_8h.html#afd1a1e285af564b849b17498e82e1a41">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define HAUTEUR_FENETRE TAILLE_BLOC * (NB_BLOCS_HAUTEUR + ENTETE_HAUTEUR)</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a><a class="code" href="sokoban_8h.html#a6e4f4ddc9d61cd09404bca0a2650e397">00031</a> <span class="preprocessor">#define NB_SPRITE 10</span>
+<a name="l00032"></a><a class="code" href="sokoban_8h.html#a7f907d351a198b9a0405ce45155625dc">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define JOUEUR &#39;@&#39;</span>
+<a name="l00033"></a><a class="code" href="sokoban_8h.html#a528503a3fc17d7c9f3ddfb07899db5c2">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define MUR &#39;#&#39;</span>
+<a name="l00034"></a><a class="code" href="sokoban_8h.html#a846494fb61b36a1804888a7709891bd7">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define CIBLE &#39;.&#39;</span>
+<a name="l00035"></a><a class="code" href="sokoban_8h.html#a1ef528955eee6dd36eb601189cbef370">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define CAISSE &#39;$&#39;</span>
+<a name="l00036"></a><a class="code" href="sokoban_8h.html#a716e9a8d845090ba7031bffa50f9536a">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define SOL &#39; &#39;</span>
+<a name="l00037"></a><a class="code" href="sokoban_8h.html#ab913a2bb4bcc22c6399d665d17c53147">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define CAISSE_CIBLE &#39;*&#39;</span>
+<a name="l00038"></a><a class="code" href="sokoban_8h.html#a69f73fd81277ab04f52547059ebd6180">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define JOUEUR_CIBLE &#39;+&#39;</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00040"></a><a class="code" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">00040</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00041"></a><a class="code" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062a06d32f047358de4e6a30c28046f4688e">00041</a>         Ok, 
+<a name="l00042"></a><a class="code" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062a4e0e818ca2367dd7b1fc913787c7567e">00042</a>         AllocError, 
+<a name="l00043"></a><a class="code" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062ab05678d42fcf0b6d2673fc429ada5ecc">00043</a>         <a class="code" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062ab05678d42fcf0b6d2673fc429ada5ecc">UndefinedPile</a>
+<a name="l00044"></a>00044 } PileError;
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">00046</a> <span class="keyword">typedef</span> <span class="keywordtype">char</span>** Niveau;
+<a name="l00047"></a>00047 
+<a name="l00052"></a><a class="code" href="struct_position.html">00052</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+<a name="l00053"></a><a class="code" href="struct_position.html#a6150e0515f7202e2fb518f7206ed97dc">00053</a>         <span class="keywordtype">int</span> x;  
+<a name="l00054"></a><a class="code" href="struct_position.html#a0a2f84ed7838f07779ae24c5a9086d33">00054</a>         <span class="keywordtype">int</span> y;  
+<a name="l00055"></a>00055 } <a class="code" href="struct_position.html" title="Definit une position.">Position</a>;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Définition de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Fri Jun 7 2013 13:55:27 pour Pokeban par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

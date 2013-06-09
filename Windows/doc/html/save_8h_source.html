@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Pokeban:  Fichier source de /home/alexn/Bureau/CS219_sokoban/save.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>/home/alexn/Bureau/CS219_sokoban/save.h</h1>  </div>
+</div>
+<div class="contents">
+<a href="save_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿
+<a name="l00010"></a>00010 <span class="preprocessor">#ifndef SAVE_H</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#define SAVE_H</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="sokoban_8h.html" title="Fichier de configuration.">sokoban.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="level_8h.html" title="(Prototypes) Fonctions utiles a la lecture d&amp;#39;un niveau">level.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="mouvement_8h.html" title="(Prototypes) Fonctions relatives aux deplacements.">mouvement.h</a>&quot;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="save_8h.html#a09f34f578c5d3e58cccaab2cb469eec4">00018</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00019"></a><a class="code" href="save_8h.html#a09f34f578c5d3e58cccaab2cb469eec4a27691475d0e79944a3f64b3340ea8581">00019</a>         Sauvegarde,
+<a name="l00020"></a><a class="code" href="save_8h.html#a09f34f578c5d3e58cccaab2cb469eec4a87329574aeb01527c06aa8f61d87533c">00020</a>         <a class="code" href="save_8h.html#a09f34f578c5d3e58cccaab2cb469eec4a87329574aeb01527c06aa8f61d87533c">Solution</a>
+<a name="l00021"></a>00021 } SaveType;
+<a name="l00022"></a>00022 
+<a name="l00023"></a><a class="code" href="save_8h.html#a9a386693df46b7256fd559169489ab01">00023</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00024"></a><a class="code" href="save_8h.html#a9a386693df46b7256fd559169489ab01a9453dfd87e9f16c36cea5149fc26772d">00024</a>         CreateOk,
+<a name="l00025"></a><a class="code" href="save_8h.html#a9a386693df46b7256fd559169489ab01a2d7b113ebc2bd0add1ac7603d33f2a80">00025</a>         <a class="code" href="save_8h.html#a9a386693df46b7256fd559169489ab01a2d7b113ebc2bd0add1ac7603d33f2a80">CreateError</a>
+<a name="l00026"></a>00026 } SaveFileError;
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="save_8h.html#abb6c230ceab4263a555fb1df405216df">00028</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00029"></a><a class="code" href="save_8h.html#abb6c230ceab4263a555fb1df405216dfa21887f3aab985704dafae9b44870316a">00029</a>         LoadOk,
+<a name="l00030"></a><a class="code" href="save_8h.html#abb6c230ceab4263a555fb1df405216dfa84f43907d7cd04e428fbb031fe13df5d">00030</a>         LoadError,
+<a name="l00031"></a><a class="code" href="save_8h.html#abb6c230ceab4263a555fb1df405216dfa00becf35392784af09ec08715c0b7eac">00031</a>         <a class="code" href="save_8h.html#abb6c230ceab4263a555fb1df405216dfa00becf35392784af09ec08715c0b7eac">LoadUndefinedParameter</a>
+<a name="l00032"></a>00032 } LoadFileError;
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="save_8h.html#af9b764ee101f296294b388146f49663a">00034</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00035"></a><a class="code" href="save_8h.html#af9b764ee101f296294b388146f49663aab83026c13883730fd8df1e342d2653a2">00035</a>         FichierNul,
+<a name="l00036"></a><a class="code" href="save_8h.html#af9b764ee101f296294b388146f49663aad263a539278dd3002e19adae55d38436">00036</a>         NiveauIntrouvable,
+<a name="l00037"></a><a class="code" href="save_8h.html#af9b764ee101f296294b388146f49663aa6558dbcf1394147ac7cc0068fa88493c">00037</a>         <a class="code" href="save_8h.html#af9b764ee101f296294b388146f49663aa6558dbcf1394147ac7cc0068fa88493c">NiveauPlace</a>
+<a name="l00038"></a>00038 } NiveauPosition;
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585">00040</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00041"></a><a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585aaaff9536057903225e09b88211f1c155">00041</a>         EditionNoError,
+<a name="l00042"></a><a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585accef0527151abd3a926f49ec89e154fa">00042</a>         EditionUndefinedLevel,
+<a name="l00043"></a><a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585aa449a9843db85ee3fbd64c035e8a3344">00043</a>         EditionUndefinedPath,
+<a name="l00044"></a><a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585a16c0cbf8026d5300e1406cdc9bf630b0">00044</a>         <a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585a16c0cbf8026d5300e1406cdc9bf630b0">EditionOpenFileError</a>
+<a name="l00045"></a>00045 } EditionError;
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8">00047</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00048"></a><a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8a54a2703c6e3860a9d204145c994248c0">00048</a>         SaveLoadNoError,
+<a name="l00049"></a><a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8ac8764c893a5a81d8928107168f0c794d">00049</a>         SaveLoadUndefinedPile,
+<a name="l00050"></a><a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8a497fa3760a7d90e64e09f13aa8d62657">00050</a>         SaveLoadUndefinedFile,
+<a name="l00051"></a><a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8af9f8062620f0f4867fa09da53717cb65">00051</a>         <a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8af9f8062620f0f4867fa09da53717cb65">SaveLoadEmpileError</a>
+<a name="l00052"></a>00052 } PileSaveLoadError;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8">PileSaveLoadError</a> <a class="code" href="save_8c.html#a1486d224076811e8f240dfe6cab024ab">chargerPileCoups</a>(<a class="code" href="struct_coup.html">CoupsJoues</a>* pile, FILE* fichier);
+<a name="l00055"></a>00055 <a class="code" href="save_8h.html#ad1e8b0a9b75e2ac3910e1f89294c76d8">PileSaveLoadError</a> <a class="code" href="save_8c.html#a7a6bcc0a0bac9298a3e1a89e1cb6b280">dechargerPileCoups</a>(<a class="code" href="struct_coup.html">CoupsJoues</a>* pile, FILE* fichier);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <a class="code" href="save_8h.html#a9a386693df46b7256fd559169489ab01">SaveFileError</a> <a class="code" href="save_8c.html#aa872e356d780d39f920cf1123c07001d">creerFichierSauvegarde</a>(<a class="code" href="save_8h.html#a09f34f578c5d3e58cccaab2cb469eec4">SaveType</a> sType, <span class="keywordtype">int</span> numero, <a class="code" href="struct_coup.html">CoupsJoues</a>* pile);
+<a name="l00058"></a>00058 <a class="code" href="save_8h.html#abb6c230ceab4263a555fb1df405216df">LoadFileError</a> <a class="code" href="save_8c.html#a0abb6d16888d9dfb97b6159911c54f04">chargerFichierSauvegarde</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numero, <a class="code" href="struct_coup.html">CoupsJoues</a>* pileCoups, <a class="code" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a>* n, <a class="code" href="struct_position.html" title="Definit une position.">Position</a>* pos, <a class="code" href="struct_cible.html">PileCible</a>* cibles, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* nbMvt, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* nbPoussee);
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <a class="code" href="save_8h.html#ac2a60b961aed026c523c08e734dcc585">EditionError</a> <a class="code" href="save_8c.html#a7db71bf4f077053ad24558080947f8f1">editeNiveau</a>(<span class="keywordtype">char</span>* fichierLevel, <span class="keywordtype">char</span>* fichierTemp, <a class="code" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a>* niveau, <span class="keywordtype">int</span> numLvl, <span class="keywordtype">int</span> hauteur);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Définition de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Fri Jun 7 2013 13:55:27 pour Pokeban par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Pokeban: Référence du fichier /home/alexn/Bureau/CS219_sokoban/level.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Généré par Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&nbsp;de&nbsp;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&nbsp;des&nbsp;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Portée&nbsp;globale</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<h1>Référence du fichier /home/alexn/Bureau/CS219_sokoban/level.c</h1>  </div>
+</div>
+<div class="contents">
+<code>#include &quot;<a class="el" href="level_8h_source.html">level.h</a>&quot;</code><br/>
+
+<p><a href="level_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#ab1e63ff4fc33f4b1deb05ef75969e874">ResultatCible</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a78eb8590e2a7d82a7100ab15a7c30322">toutesCiblesValidees</a> (<a class="el" href="struct_cible.html">PileCible</a> *pile, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *niveau)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Indique si toutes les Cibles de la pile sont valides.  <a href="#a78eb8590e2a7d82a7100ab15a7c30322"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">PileError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#ad8a2c2a842b3dbe36757c33b87d2f006">empilerCible</a> (<a class="el" href="struct_cible.html">PileCible</a> *pile, unsigned int x, unsigned int y, char validee)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Empile une <a class="el" href="struct_cible.html">Cible</a> sur une pile.  <a href="#ad8a2c2a842b3dbe36757c33b87d2f006"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a564fd1887a5f2e666d5a338b2f222d71">libererPileCible</a> (<a class="el" href="struct_cible.html">PileCible</a> *pile)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libere une pile de <a class="el" href="struct_cible.html">Cible</a> de la memoire.  <a href="#a564fd1887a5f2e666d5a338b2f222d71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a3c4efccb481a085e46b0d2c7198fde57">getTailleNiveau</a> (FILE *niveaux, unsigned int numero, unsigned int *largeur, unsigned int *hauteur, fpos_t *positionNiveau)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Donne la largeur et la hauteur du niveau desire.  <a href="#a3c4efccb481a085e46b0d2c7198fde57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a96c802e61eb4c35072d840184cdbab5d">alloueNiveau</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *niveau, unsigned int largeur, unsigned int hauteur)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Alloue l'espace memoire necessaire pour stocker le Niveau.  <a href="#a96c802e61eb4c35072d840184cdbab5d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a7de92d1cfb9a2a2b244dd83a93306b5c">freeNiveau</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, unsigned int hauteur)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libere le Niveau de la memoire.  <a href="#a7de92d1cfb9a2a2b244dd83a93306b5c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#ab09c17997dc975860e9835a0148bbe99">remplirNiveau</a> (FILE *levels, fpos_t *position, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *n, unsigned int w, unsigned int h, <a class="el" href="struct_position.html">Position</a> *posJoueur, <a class="el" href="struct_cible.html">PileCible</a> *pileCible)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remplit le Niveau avec les caracteres du fichier.  <a href="#ab09c17997dc975860e9835a0148bbe99"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#ad04a857afe8155356f64e65cd76413c6">caractereValide</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *niveau, char *ligne, unsigned int numeroLigne, unsigned int largeur, <a class="el" href="struct_position.html">Position</a> *posJoueur, <a class="el" href="struct_cible.html">PileCible</a> *pileCible)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifie que les caracteres de ligne sont valides. Assigne la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur quand il est trouve. Empile les <a class="el" href="struct_cible.html">Cible</a> trouvees dans pileCible.  <a href="#ad04a857afe8155356f64e65cd76413c6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a4a317f613af6fd01ebcd863d29cbd76f">readLevel</a> (char *path, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *niveau, unsigned int numero, unsigned int *largeurNiveau, unsigned int *hauteurNiveau, <a class="el" href="struct_position.html">Position</a> *posJoueur, <a class="el" href="struct_cible.html">PileCible</a> *pileCible)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ouvre le fichier situe a path. Alloue l'espace memoire necessaire pour stocker le Niveau designe par numero. Remplit le Niveau avec le contenu correspondant dans le fichier. Assigne la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur quand il est trouve. Empile les <a class="el" href="struct_cible.html">Cible</a> trouvees dans pileCible.  <a href="#a4a317f613af6fd01ebcd863d29cbd76f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#a9b99fc035024411ce9df386364f8a41a">updateLevel</a> (<a class="el" href="level_8h.html#a0957e0df001dd796895b75f947daddb2">UpdateType</a> operation, char *fichierNiveaux, <a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *niveau, <a class="el" href="struct_position.html">Position</a> *posJoueur, <a class="el" href="struct_cible.html">PileCible</a> *pileCible, unsigned int *numLvl, unsigned int *lNiveau, unsigned int *hNiveau)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Met a jour le Niveau designe par niveau : le reinitialiser, charger le niveau suivant, charger le niveau precedent.  <a href="#a9b99fc035024411ce9df386364f8a41a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="level_8c.html#ac5d7be29d4bf352ff5dd25342f6f047c">createLevel</a> (<a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *niveau, unsigned int *largeurNiveau, unsigned int *hauteurNiveau)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cree un nouveau Niveau, rempli de SOL, de taille NB_BLOCS_HAUTEUR x NB_BLOCS_LARGEUR.  <a href="#ac5d7be29d4bf352ff5dd25342f6f047c"></a><br/></td></tr>
+</table>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a96c802e61eb4c35072d840184cdbab5d"></a><!-- doxytag: member="level.c::alloueNiveau" ref="a96c802e61eb4c35072d840184cdbab5d" args="(Niveau *niveau, unsigned int largeur, unsigned int hauteur)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a> alloueNiveau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>niveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>hauteur</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Alloue l'espace memoire necessaire pour stocker le Niveau. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>Pointeur sur le Niveau a allouer. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>largeur</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la largeur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hauteur</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la hauteur du niveau.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedLevel si niveau est nul, AllocationMemoire si erreur d'allocation memoire, NoError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00156">156</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad04a857afe8155356f64e65cd76413c6"></a><!-- doxytag: member="level.c::caractereValide" ref="ad04a857afe8155356f64e65cd76413c6" args="(Niveau *niveau, char *ligne, unsigned int numeroLigne, unsigned int largeur, Position *posJoueur, PileCible *pileCible)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a> caractereValide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>niveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>numeroLigne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a> *&nbsp;</td>
+          <td class="paramname"> <em>posJoueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pileCible</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Verifie que les caracteres de ligne sont valides. Assigne la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur quand il est trouve. Empile les <a class="el" href="struct_cible.html">Cible</a> trouvees dans pileCible. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>Pointeur sur le Niveau a remplir. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ligne</em>&nbsp;</td><td>Ligne a valider </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numeroLigne</em>&nbsp;</td><td>Pointeur sur le Niveau a remplir. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>largeur</em>&nbsp;</td><td>Nombre de colonnes du Niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posJoueur</em>&nbsp;</td><td>Pointeur sur la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur, assignee des que le joueur est trouve dans le fichier. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pileCible</em>&nbsp;</td><td>Pointeur sur une pile de <a class="el" href="struct_cible.html">Cible</a>, chaque <a class="el" href="struct_cible.html">Cible</a> trouvee dans le niveau y est empilee.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedLevel si n est nul, UndefinedParameter si un des autres parametres est nul, AllocationMemoire si erreur d'empilage d'une <a class="el" href="struct_cible.html">Cible</a>, CaractereInconnu si un caractere inconnu est present, NoError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00263">263</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5d7be29d4bf352ff5dd25342f6f047c"></a><!-- doxytag: member="level.c::createLevel" ref="ac5d7be29d4bf352ff5dd25342f6f047c" args="(Niveau *niveau, unsigned int *largeurNiveau, unsigned int *hauteurNiveau)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a> createLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>niveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>largeurNiveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>hauteurNiveau</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cree un nouveau Niveau, rempli de SOL, de taille NB_BLOCS_HAUTEUR x NB_BLOCS_LARGEUR. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>Pointeur sur le Niveau a remplir. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>largeurNiveau</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la largeur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hauteurNiveau</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la hauteur du niveau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedLevel si niveau est nul, UndefinedParameter si un des autres parametres est nul, AllocationMemoire si erreur d'allocation du Niveau, NoError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00444">444</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8a2c2a842b3dbe36757c33b87d2f006"></a><!-- doxytag: member="level.c::empilerCible" ref="ad8a2c2a842b3dbe36757c33b87d2f006" args="(PileCible *pile, unsigned int x, unsigned int y, char validee)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sokoban_8h.html#a98203b78a9c1e515e4f20b612a9f3062">PileError</a> empilerCible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>validee</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Empile une <a class="el" href="struct_cible.html">Cible</a> sur une pile. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pointeur sur la pile. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>Abscisse de la cible dans le Niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>Ordonnee de la cible dans le Niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>validee</em>&nbsp;</td><td>1 si une CAISSE est presente sur la <a class="el" href="struct_cible.html">Cible</a>, 0 sinon.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie AllocError si erreur d'allocation de la nouvelle cible, UndefinedPile si pile est nul, NoError si tout s'est bien passe. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00045">45</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7de92d1cfb9a2a2b244dd83a93306b5c"></a><!-- doxytag: member="level.c::freeNiveau" ref="a7de92d1cfb9a2a2b244dd83a93306b5c" args="(Niveau *n, unsigned int hauteur)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeNiveau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>hauteur</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libere le Niveau de la memoire. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Pointeur sur le Niveau a allouer. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hauteur</em>&nbsp;</td><td>Nombre de lignes du Niveau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00194">194</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c4efccb481a085e46b0d2c7198fde57"></a><!-- doxytag: member="level.c::getTailleNiveau" ref="a3c4efccb481a085e46b0d2c7198fde57" args="(FILE *niveaux, unsigned int numero, unsigned int *largeur, unsigned int *hauteur, fpos_t *positionNiveau)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getTailleNiveau </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>niveaux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>numero</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>hauteur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fpos_t *&nbsp;</td>
+          <td class="paramname"> <em>positionNiveau</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Donne la largeur et la hauteur du niveau desire. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>niveaux</em>&nbsp;</td><td>Pointeur sur le fichier de niveaux. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numero</em>&nbsp;</td><td>Numero du niveau dont on doit determiner les dimensions. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>largeur</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la largeur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hauteur</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la hauteur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>positionNiveau</em>&nbsp;</td><td>Pointeur sur fpos_t, contenant la position du niveau dans le fichier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00096">96</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a564fd1887a5f2e666d5a338b2f222d71"></a><!-- doxytag: member="level.c::libererPileCible" ref="a564fd1887a5f2e666d5a338b2f222d71" args="(PileCible *pile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void libererPileCible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libere une pile de <a class="el" href="struct_cible.html">Cible</a> de la memoire. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pointeur sur la pile a liberer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00073">73</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a317f613af6fd01ebcd863d29cbd76f"></a><!-- doxytag: member="level.c::readLevel" ref="a4a317f613af6fd01ebcd863d29cbd76f" args="(char *path, Niveau *niveau, unsigned int numero, unsigned int *largeurNiveau, unsigned int *hauteurNiveau, Position *posJoueur, PileCible *pileCible)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a> readLevel </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>niveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>numero</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>largeurNiveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>hauteurNiveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a> *&nbsp;</td>
+          <td class="paramname"> <em>posJoueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pileCible</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ouvre le fichier situe a path. Alloue l'espace memoire necessaire pour stocker le Niveau designe par numero. Remplit le Niveau avec le contenu correspondant dans le fichier. Assigne la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur quand il est trouve. Empile les <a class="el" href="struct_cible.html">Cible</a> trouvees dans pileCible. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>path</em>&nbsp;</td><td>Nom du fichier contenant les niveaux. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>Pointeur sur le Niveau a remplir. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numero</em>&nbsp;</td><td>Numero du niveau a charger. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>largeurNiveau</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la largeur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hauteurNiveau</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la hauteur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posJoueur</em>&nbsp;</td><td>Pointeur sur la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur, assignee des que le joueur est trouve dans le fichier. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pileCible</em>&nbsp;</td><td>Pointeur sur une pile de <a class="el" href="struct_cible.html">Cible</a>, chaque <a class="el" href="struct_cible.html">Cible</a> trouvee dans le niveau y est empilee.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedLevel si niveau est nul, UndefinedParameter si un des autres parametres est nul, FichierIntrouvable si le fichier de niveaux n'existe pas, AllocationMemoire si erreur d'allocation du Niveau, CaractereInconnu si un caractere inconnu est present dans le Niveau, NoError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00343">343</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab09c17997dc975860e9835a0148bbe99"></a><!-- doxytag: member="level.c::remplirNiveau" ref="ab09c17997dc975860e9835a0148bbe99" args="(FILE *levels, fpos_t *position, Niveau *n, unsigned int w, unsigned int h, Position *posJoueur, PileCible *pileCible)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a> remplirNiveau </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>levels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fpos_t *&nbsp;</td>
+          <td class="paramname"> <em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a> *&nbsp;</td>
+          <td class="paramname"> <em>posJoueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pileCible</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remplit le Niveau avec les caracteres du fichier. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>levels</em>&nbsp;</td><td>Pointeur sur le fichier definissant les niveaux. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Pointeur sur la position du niveau dans le fichier de niveaux. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Pointeur sur le Niveau a remplir. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>Nombre de colonnes du Niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>Nombre de lignes du Niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posJoueur</em>&nbsp;</td><td>Pointeur sur la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur, assignee des que le joueur est trouve dans le fichier. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pileCible</em>&nbsp;</td><td>Pointeur sur une pile de <a class="el" href="struct_cible.html">Cible</a>, chaque <a class="el" href="struct_cible.html">Cible</a> trouvee dans le niveau y est empilee.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedLevel si n est nul, UndefinedParameter si un des autres parametres est nul, le code d'erreur de caractereValide si son execution echoue, NoError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00222">222</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a78eb8590e2a7d82a7100ab15a7c30322"></a><!-- doxytag: member="level.c::toutesCiblesValidees" ref="a78eb8590e2a7d82a7100ab15a7c30322" args="(PileCible *pile, Niveau *niveau)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#ab1e63ff4fc33f4b1deb05ef75969e874">ResultatCible</a> toutesCiblesValidees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>niveau</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Indique si toutes les Cibles de la pile sont valides. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pile</em>&nbsp;</td><td>Pointeur sur la pile de <a class="el" href="struct_cible.html">Cible</a> a verifier. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>Pointeur sur le Niveau.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie CibleValidee si toutes les cibles de la pile sont valides, CibleNonValidee sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00012">12</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b99fc035024411ce9df386364f8a41a"></a><!-- doxytag: member="level.c::updateLevel" ref="a9b99fc035024411ce9df386364f8a41a" args="(UpdateType operation, char *fichierNiveaux, Niveau *niveau, Position *posJoueur, PileCible *pileCible, unsigned int *numLvl, unsigned int *lNiveau, unsigned int *hNiveau)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="level_8h.html#a085d252e62d5ad946f3d3cba8a3125e0">LevelError</a> updateLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="level_8h.html#a0957e0df001dd796895b75f947daddb2">UpdateType</a>&nbsp;</td>
+          <td class="paramname"> <em>operation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>fichierNiveaux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sokoban_8h.html#a0473b4db7a05f3e26c2ca161e853cc87">Niveau</a> *&nbsp;</td>
+          <td class="paramname"> <em>niveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_position.html">Position</a> *&nbsp;</td>
+          <td class="paramname"> <em>posJoueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cible.html">PileCible</a> *&nbsp;</td>
+          <td class="paramname"> <em>pileCible</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>numLvl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>lNiveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>hNiveau</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Met a jour le Niveau designe par niveau : le reinitialiser, charger le niveau suivant, charger le niveau precedent. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>operation</em>&nbsp;</td><td>Type de l'operation, aller au niveau precedent, suivant, ou reinitialiser celui en cours. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>fichierNiveaux</em>&nbsp;</td><td>Nom du fichier contenant les niveaux. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>Pointeur sur le Niveau a remplir. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posJoueur</em>&nbsp;</td><td>Pointeur sur la <a class="el" href="struct_position.html" title="Definit une position.">Position</a> du joueur, assignee des que le joueur est trouve dans le fichier. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pileCible</em>&nbsp;</td><td>Pointeur sur une pile de <a class="el" href="struct_cible.html">Cible</a>, chaque <a class="el" href="struct_cible.html">Cible</a> trouvee dans le niveau y est empilee. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>numLvl</em>&nbsp;</td><td>Pointeur sur la variable contenant le numero du niveau actuel. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>lNiveau</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la largeur du niveau. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hNiveau</em>&nbsp;</td><td>Pointeur sur l'entier qui contiendra la hauteur du niveau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Renvoie UndefinedLevel si niveau est nul, UndefinedParameter si un des autres parametres est nul, FichierIntrouvable si le fichier de niveaux n'existe pas, AllocationMemoire si erreur d'allocation du Niveau, CaractereInconnu si un caractere inconnu est present dans le Niveau, NoError sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="level_8c_source.html#l00405">405</a> du fichier <a class="el" href="level_8c_source.html">level.c</a>.</p>
+
+</div>
+</div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Définition de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Généré le Fri Jun 7 2013 13:55:27 pour Pokeban par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>
